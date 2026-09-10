@@ -548,6 +548,6 @@ footer {
 
 @media (max-width: 800px){
   #checkAnswer{
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
 }
