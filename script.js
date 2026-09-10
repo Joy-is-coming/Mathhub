@@ -326,6 +326,15 @@ if (savedProgress) {
 
 }
 
+const savedProgress =
+  localStorage.getItem("mathHubProgress");
+
+if (savedProgress) {
+
+  completedLessons = JSON.parse(savedProgress);
+
+}
+
 
 // Create Algebra lesson cards
 
@@ -579,6 +588,14 @@ nextQuestion.addEventListener("click", function () {
       quizResult.textContent =
         `🎉 Excellent! You scored ${percentage}%. Lesson completed!`;
 
+      if (!completedLessons.includes(currentLesson.id)) {
+
+        completedLessons.push(currentLesson.id);
+
+        saveProgress();
+
+      }
+
     } else {
 
       quizResult.textContent =
@@ -589,3 +606,39 @@ nextQuestion.addEventListener("click", function () {
   }
 
 });
+
+// progress-bar 
+function updateProgress() {
+
+  const totalLessons =
+    algebraLessons.length;
+
+  const completed =
+    completedLessons.length;
+
+  const percentage =
+    (completed / totalLessons) * 100;
+
+  const progressText =
+    document.getElementById("progressText");
+
+  const overallProgressFill =
+    document.getElementById("overallProgressFill");
+
+  const overallPercentage =
+    document.getElementById("overallPercentage");
+
+
+  progressText.textContent =
+    `${completed} of ${totalLessons} lessons completed`;
+
+  overallProgressFill.style.width =
+    `${percentage}%`;
+
+  overallPercentage.textContent =
+    `${percentage}%`;
+
+
+
+}
+updateProgress();
