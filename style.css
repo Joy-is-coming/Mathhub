@@ -545,3 +545,9 @@ footer {
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 800px){
+  #checkAnswer{
+    margin-bottom: 20px;
+  }
+}
