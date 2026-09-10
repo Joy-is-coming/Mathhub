@@ -549,5 +549,6 @@ footer {
 @media (max-width: 800px){
   #checkAnswer{
     margin-top: 20px;
+    background-color: gold;
   }
 }
