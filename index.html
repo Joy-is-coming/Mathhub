@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathHub - Learn Mathematics</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="maths.jpg">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      Math<span>Hub</span>
+    </div>
+
+    <div class="menu" id="menu">
+      <a href="#">Home</a>
+      <a href="">Lessons</a>
+      <a href="">Practice</a>
+      <a href="">Quiz</a>
+      <a href="">Progress</a>
+    </div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </nav>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-content">
+
+      <p class="small-title">WELCOME TO MATHHUB</p>
+
+      <h1>
+        Learn Mathematics.
+        <span>Understand & Master it.</span>
+      </h1>
+
+      <p class="hero-text">
+        Improve your Mathematics skills through simple
+        lessons, practice questions and interactive quizzes.
+      </p>
+
+      <button class="start-btn" id="startLearning">
+        Start Learning 🚀
+      </button>
+    </div>
+
+  </section>
+
+  <!-- Lesson Section -->
+  <section class="lessons" id="lessons">
+    <div class="section-heading">
+      <div>
+        <p class="small-title">LEARN</p>
+        <h2>Mathematics Lessons</h2>
+      </div>
+    </div>
+
+    <div class="lesson-container">
+      <div class="lesson-card">
+        <div class="lesson-icon">🔢</div>
+        <div>
+          <h3>Algebra</h3>
+          <p>Equations, expressions and factorization.</p>
+          <span>8 Lessons</span>
+        </div>
+
+        <button class="lesson-btn" id="algebraBtn">Start →</button>
+      </div>
+
+
+      <div class="lesson-card">
+        <div class="lesson-icon">📐</div>
+
+        <div>
+          <h3>Geometry</h3>
+          <p>Shapes, angles, areas and measurements.</p>
+          <span>6 Lessons</span>
+        </div>
+
+        <button class="lesson-btn">Start →</button>
+      </div>
+
+
+      <div class="lesson-card">
+        <div class="lesson-icon">📊</div>
+
+        <div>
+          <h3>Statistics</h3>
+          <p>Data, averages, graphs and probability.</p>
+          <span>7 Lessons</span>
+        </div>
+
+        <button class="lesson-btn">Start →</button>
+      </div>
+
+
+      <div class="lesson-card">
+        <div class="lesson-icon">📈</div>
+
+        <div>
+          <h3>Calculus</h3>
+          <p>Limits, differentiation and integration.</p>
+          <span>10 Lessons</span>
+        </div>
+
+        <button class="lesson-btn">Start →</button>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Popular Topics -->
+  <section class="topics">
+    <div class="section-heading">
+      <div>
+        <p class="small-title">LEARN</p>
+        <h2>Popular Topics</h2>
+        <a href="#">VIEW ALL →</a>
+      </div>
+
+      <div class="topic-container">
+        <!-- Algebra -->
+        <div class="topic-card">
+          <div class="topic-icon">
+            🔢
+          </div>
+          <h3>Algebra</h3>
+          <p>
+            Learn equations, expressions,
+            factorization and more.
+          </p>
+          <span>8 Lessons →</span>
+        </div>
+
+      </div>
+
+      <!-- Geometry -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          📐
+        </div>
+        <h3>Geometry</h3>
+        <p>
+          Explore shapes, angles,
+          areas and measurements.
+        </p>
+        <span>6 Lessons →</span>
+      </div>
+
+      <!-- Statistics -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          📊
+        </div>
+        <h3>Statistics</h3>
+        <p>
+          Understand data, averages,
+          probability and graphs.
+        </p>
+        <span>7 Lessons →</span>
+      </div>
+
+      <!-- Calculus -->
+
+      <div class="topic-card">
+        <div class="topic-icon">
+          📈
+        </div>
+        <h3>Calculus</h3>
+        <p>
+          Learn differentiation,
+          integration and limits.
+        </p>
+        <span>10 Lessons →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Continue Learning -->
+
+  <section class="continue">
+    <div class="continue-content">
+      <p class="small-title">KEEP GOING</p>
+      <h2>Continue Learning</h2>
+      <p>
+        You're making progress. Continue where
+        you stopped last time.
+      </p>
+
+      <div class="progress">
+        <div class="progress-info">
+          <span>Algebra</span>
+          <span>80%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <button class="continue-btn">
+          Continue Lesson →
+        </button>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Algebra Lesson Page -->
+
+  <section class="algebra-page" id="algebraPage">
+    <button class="back-btn" id="backToLessons">
+      ← Back to Lessons
+    </button>
+
+    <div class="algebra-header">
+      <p class="small-title">MATHEMATICS</p>
+      <h2>Algebra</h2>
+
+      <p>
+        Master the fundamentals of algebra through
+        simple explanations and practical examples.
+      </p>
+
+      <div class="algebra-lessons" id="algebraLessons">
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lesson View Page -->
+  <section class="lesson-view" id="lessonView">
+
+    <button class="back-btn" id="backToAlgebra">
+      ← Back to Algebra
+    </button>
+
+    <div class="lesson-content">
+
+      <p class="small-title">ALGEBRA LESSON</p>
+
+      <h2 id="lessonTitle">Introduction to Algebra</h2>
+
+      <p id="lessonDescription">
+        Learn the basic ideas and language of algebra.
+      </p>
+
+      <div id="lessonContent"></div>
+
+      <div class="practice-section">
+
+        <h3>Try It Yourself 🧠</h3>
+
+        <p id="practiceQuestion"></p>
+
+        <input type="number" id="answerInput" placeholder="Enter your answer">
+
+        <button id="checkAnswer">
+          Check Answer
+        </button>
+
+        <p id="answerFeedback"></p>
+
+        <p id="scoreDisplay">
+          Score: 0 / 0
+        </p>
+
+        <div id="quizResult"></div>
+
+        <button id="nextQuestion">
+          Next Question →
+        </button>
+
+      </div>
+
+  </section>
+
+  <!-- Bottom Navigation -->
+  <footer>
+    <p>
+      © 2026 MathHub. Learn. Practice. Master.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

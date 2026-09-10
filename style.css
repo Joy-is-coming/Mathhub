@@ -1,0 +1,547 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  color: #172033;
+}
+
+.navbar {
+  width: 100px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background-color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 40px;
+}
+
+.logo span {
+  color: #2563eb;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #172033;
+  font-style: 15px;
+}
+
+.menu a:hover {
+  color: #2563eb;
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  font-style: 25px;
+  background: none;
+}
+
+.hero {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: #eef5ff;
+  padding: 70px 7%;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.small-title {
+  color: #2563eb;
+  font-style: 13px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
+.hero h1 {
+  font-style: 55px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  display: block;
+  color: #2563eb;
+}
+
+.hero-text {
+  max-width: 550px;
+  font-style: 18px;
+  line-height: 1.6;
+  color: #5d687b;
+  margin-bottom: 30px;
+}
+
+.start-btn,
+.continue-btn {
+  border: none;
+  padding: 14px 25px;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-style: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.start-btn:hover,
+.continue-btn:hover {
+  opacity: 0.9;
+}
+
+/* topic section */
+.topic {
+  padding: 70px 7%;
+}
+
+.section-heading {
+  display: flex;
+  margin-bottom: 35px;
+  justify-content: space-around;
+  gap: 5px;
+
+  /* align-items: end; */
+}
+
+.section-heading h2 {
+  font-size: 32px;
+}
+
+.section-heading a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.topic-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.topic-card {
+
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  transition: 0.3s;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+}
+
+.topic-card p {
+  font-size: 21px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #687386;
+  ;
+}
+
+.topic-card span {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.topic-card h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.topic-icon {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.continue {
+  padding: 70px 7%;
+}
+
+.continue-content {
+  max-width: 700px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.continue h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.continue-content>p {
+  color: #687386;
+  margin-bottom: 25px;
+}
+
+.progress {
+  margin-bottom: 25px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e5eaf2;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  background-color: #2563eb;
+  height: 100%;
+  width: 80px;
+
+}
+
+footer {
+  color: #687386;
+  padding: 30px;
+  text-align: center;
+}
+
+.menu.show {
+  display: flex;
+}
+
+/* Responsiveness */
+@media (max-width:800px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .menu .show {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 70px;
+    right: 6%;
+
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 450px;
+    padding: 50px 6%;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .topic {
+    padding: 50px 6%;
+  }
+
+  .topic-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+
+  .topic-container {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .continue-content {
+    padding: 25px;
+  }
+
+}
+
+/* Lesson section */
+.lessons {
+  padding: 70px 7%;
+  background-color: #f7f9fc;
+}
+
+.lesson-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.lesson-card {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+}
+
+.lesson-icon {
+  font-size: 40px;
+}
+
+.lesson-card h3 {
+  margin-bottom: 8px;
+}
+
+.lesson-card p {
+  color: #687386;
+}
+
+.lesson-card span {
+  font-weight: bold;
+  font-size: 13px;
+  color: #2563eb;
+}
+
+.lesson-btn {
+  margin-left: auto;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 7px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .lesson-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Algebra Page */
+.algebra-page {
+  display: none;
+  padding: 70px 7%;
+  background-color: #f7f9fc;
+  min-height: 600px;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  color: #2563eb;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.algebra-header {
+  max-width: 650px;
+  margin-bottom: 40px;
+}
+
+.algebra-header h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.algebra-header p {
+  color: #687386;
+  line-height: 1.6;
+}
+
+.algebra-lessons {
+  display: grid;
+  gap: 15px;
+  max-width: 800px;
+}
+
+.algebra-lesson-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.lesson-number {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eef5ff;
+  color: #2563eb;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.algebra-lesson-info {
+  flex: 1;
+}
+
+.algebra-lesson-info h3 {
+  margin-bottom: 5px;
+}
+
+.algebra-lesson-info p {
+  color: #687386;
+  font-size: 14px;
+}
+
+.open-lesson {
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* lesson view section */
+.lesson-view {
+  display: none;
+  padding: 70px 7%;
+  background-color: #f7f9fc;
+  min-height: 600px;
+}
+
+.lesson-content {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.lesson-content h2 {
+  margin-bottom: 15px;
+  font-size: 35px;
+}
+
+.lesson-content h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.lesson-content p {
+  line-height: 1.8;
+}
+
+.math-example {
+  background-color: #f1f5f9;
+  padding: 20px;
+  margin: 15px 0;
+  font-size: 22px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.next-lesson {
+  padding: 12px 20px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Practice section */
+.practice-section {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+}
+
+.practice-section h3 {
+  margin-bottom: 15px;
+}
+
+.practice-section input {
+  width: 200px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.practice-section button {
+  padding: 12px 18px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.practice-section button:hover {
+  opacity: 0.9;
+}
+
+#answerFeedback {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#nextQuestion {
+  display: none;
+  margin-top: 20px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #16a34a;
+  color: white;
+  cursor: pointer;
+}
