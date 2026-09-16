@@ -386,7 +386,7 @@ const algebraLessons = [
                 Substitution means replacing a variable with a known value.
             </p>
 
-            <h3>Example</h3>
+            <h3>Example 1:</h3>
 
             <p>
                 Find 2x + 3 when x = 4.
@@ -399,12 +399,70 @@ const algebraLessons = [
             <p>
                 2(4) + 3 = 8 + 3 = <strong>11</strong>
             </p>
+
+            <h3>Example 2 :</h3>
+
+            <p>
+                Find 2x + 10 when x = 4.
+            </p>
+
+            <p>
+                Replace x with 4:
+            </p>
+
+            <p>
+                2(4) + 10 = 8 + 10 = <strong>18</strong>
+            </p>
+
+
+            <h3>Example 3 :</h3>
+
+            <p>
+                Find 3m + 1 when m = -1.
+            </p>
+
+            <p>
+                Replace m with -1:
+            </p>
+
+            <p>
+                3(-1) + 1 = -3 + 1 = <strong>-2</strong>
+            </p>
+
+
+            <h3>Example 4 :</h3>
+
+            <p>
+                solve 2y + 1 when y = 7.
+            </p>
+
+            <p>
+                Replace y with 7:
+            </p>
+
+            <p>
+                2(7) + 1 = 14 + 1 = <strong>15</strong>
+            </p>
+
+            <h3>Example 5:</h3>
+
+            <p>
+                Evaluate 5t - 6 when t = 3.
+            </p>
+
+            <p>
+                Replace t with 3:
+            </p>
+
+            <p>
+                5(3) - 6 = 15 + 6 = <strong>9</strong>
+            </p>
         `,
 
     practice: [
       {
-        question: "Find 2x + 3 when x = 4.",
-        answer: 11
+        question: "Find 2x - 3 when x = 4.",
+        answer: 5
       },
       {
         question: "Find 3x + 2 when x = 5.",
@@ -581,6 +639,8 @@ const algebraLessons = [
             <p>
                 x = <strong>4</strong>
             </p>
+
+            
         `,
 
     practice: [
