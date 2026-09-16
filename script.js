@@ -326,14 +326,16 @@ if (savedProgress) {
 
 }
 
-const savedProgress =
-  localStorage.getItem("mathHubProgress");
+function saveProgress() {
 
-if (savedProgress) {
-
-  completedLessons = JSON.parse(savedProgress);
+  localStorage.setItem(
+    "mathHubProgress",
+    JSON.stringify(completedLessons)
+  );
 
 }
+
+
 
 
 // Create Algebra lesson cards
@@ -593,6 +595,7 @@ nextQuestion.addEventListener("click", function () {
         completedLessons.push(currentLesson.id);
 
         saveProgress();
+        updateProgress();
 
       }
 
@@ -619,6 +622,7 @@ function updateProgress() {
   const percentage =
     (completed / totalLessons) * 100;
 
+
   const progressText =
     document.getElementById("progressText");
 
@@ -628,6 +632,11 @@ function updateProgress() {
   const overallPercentage =
     document.getElementById("overallPercentage");
 
+  const lessonProgressList =
+    document.getElementById("lessonProgressList");
+
+
+  // Update overall progress
 
   progressText.textContent =
     `${completed} of ${totalLessons} lessons completed`;
@@ -639,6 +648,74 @@ function updateProgress() {
     `${percentage}%`;
 
 
+  // Clear the old lesson list
+
+  lessonProgressList.innerHTML = "";
+
+
+  // Create each lesson
+
+  algebraLessons.forEach(function (lesson) {
+
+    const lessonItem =
+      document.createElement("div");
+
+    lessonItem.classList.add(
+      "lesson-progress-item"
+    );
+
+
+    const isCompleted =
+      completedLessons.includes(lesson.id);
+
+
+    if (isCompleted) {
+
+      lessonItem.innerHTML = `
+
+                <div class="lesson-progress-icon">
+                    ✅
+                </div>
+
+                <div class="lesson-progress-info">
+
+                    <h4>${lesson.title}</h4>
+
+                    <p>
+                        Completed
+                    </p>
+
+                </div>
+
+            `;
+
+    } else {
+
+      lessonItem.innerHTML = `
+
+                <div class="lesson-progress-icon">
+                    🔒
+                </div>
+
+                <div class="lesson-progress-info">
+
+                    <h4>${lesson.title}</h4>
+
+                    <p>
+                        Not completed
+                    </p>
+
+                </div>
+
+            `;
+
+    }
+
+
+    lessonProgressList.appendChild(
+      lessonItem
+    );
+  });
 
 }
-updateProgress();
+updateProgress(); 
