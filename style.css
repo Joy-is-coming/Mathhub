@@ -38,7 +38,7 @@ body {
 .menu a {
   text-decoration: none;
   color: #172033;
-  font-style: 15px;
+  font-size: 15px;
 }
 
 .menu a:hover {
@@ -48,7 +48,7 @@ body {
 .menu-btn {
   display: none;
   border: none;
-  font-style: 25px;
+  font-size: 25px;
   background: none;
 }
 
@@ -72,7 +72,7 @@ body {
 
 .small-title {
   color: #2563eb;
-  font-style: 13px;
+  font-size: 13px;
   font-weight: bold;
   margin-bottom: 15px;
   letter-spacing: 2px;
@@ -80,7 +80,7 @@ body {
 }
 
 .hero h1 {
-  font-style: 55px;
+  font-size: 55px;
   line-height: 1.1;
   margin-bottom: 20px;
 }
@@ -92,7 +92,7 @@ body {
 
 .hero-text {
   max-width: 550px;
-  font-style: 18px;
+  font-size: 18px;
   line-height: 1.6;
   color: #5d687b;
   margin-bottom: 30px;
@@ -105,7 +105,7 @@ body {
   border-radius: 8px;
   background-color: #2563eb;
   color: white;
-  font-style: 16px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -251,7 +251,7 @@ footer {
     display: block;
   }
 
-  .menu .show {
+  .menu.show {
     display: flex;
     flex-direction: column;
 
@@ -368,7 +368,7 @@ footer {
 }
 
 /* Algebra Page */
-.algebra-page {
+.subject-page {
   display: none;
   padding: 70px 7%;
   background-color: #f7f9fc;
