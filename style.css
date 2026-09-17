@@ -252,14 +252,16 @@ footer {
   }
 
   .menu.show {
-    display: flex;
+    display: grid;
     flex-direction: column;
+    
 
     position: absolute;
     top: 70px;
     right: 6%;
 
-    background-color: white;
+    background-color: green;
+    
 
     padding: 20px;
 
@@ -269,6 +271,8 @@ footer {
 
     gap: 15px;
   }
+
+  
 
   .hero {
     min-height: 450px;
