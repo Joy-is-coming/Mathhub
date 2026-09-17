@@ -3,7 +3,6 @@
 // ===============================
 
 const menuBtn = document.querySelector("#menuBtn");
-
 const menu = document.querySelector("#menu");
 
 menuBtn.addEventListener("click", function () {
@@ -20,12 +19,12 @@ menuBtn.addEventListener("click", function () {
 const startLearning =
   document.querySelector("#startLearning");
 
-const lessons =
+const lessonsSection =
   document.querySelector("#lessons");
 
 startLearning.addEventListener("click", function () {
 
-  lessons.scrollIntoView({
+  lessonsSection.scrollIntoView({
     behavior: "smooth"
   });
 
@@ -33,11 +32,8 @@ startLearning.addEventListener("click", function () {
 
 
 // ===============================
-// GET HTML ELEMENTS
+// HTML ELEMENTS
 // ===============================
-
-const algebraLessonsContainer =
-  document.getElementById("algebraLessons");
 
 const lessonView =
   document.getElementById("lessonView");
@@ -60,15 +56,6 @@ const lessonTitle =
 const lessonDescription =
   document.getElementById("lessonDescription");
 
-const algebraBtn =
-  document.getElementById("algebraBtn");
-
-const lessonsSection =
-  document.getElementById("lessons");
-
-const algebraPage =
-  document.getElementById("algebraPage");
-
 const practiceQuestion =
   document.getElementById("practiceQuestion");
 
@@ -83,8 +70,35 @@ const nextQuestion =
 
 
 // ===============================
-// QUIZ VARIABLES
+// SUBJECT PAGE ELEMENTS
 // ===============================
+
+const subjectPage =
+  document.getElementById("subjectPage");
+
+const subjectTitle =
+  document.getElementById("subjectTitle");
+
+const subjectDescription =
+  document.getElementById("subjectDescription");
+
+const subjectLessons =
+  document.getElementById("subjectLessons");
+
+const backToLessons =
+  document.getElementById("backToLessons");
+
+const backToSubject =
+  document.getElementById("backToSubject");
+
+
+// ===============================
+// CURRENT LESSON VARIABLES
+// ===============================
+
+let currentSubject = null;
+
+let currentLesson = null;
 
 let currentQuestion = 0;
 
@@ -125,203 +139,265 @@ function saveProgress() {
 
 
 // ===============================
-// CREATE ALGEBRA LESSON CARDS
+// CREATE UNIQUE LESSON ID
 // ===============================
 
-algebraLessons.forEach(function (lesson) {
+function getLessonId(subject, lessonId) {
 
-  const lessonCard =
-    document.createElement("div");
+  return `${subject}-${lessonId}`;
 
-  lessonCard.classList.add(
-    "algebra-lesson-card"
-  );
+}
 
 
-  lessonCard.innerHTML = `
+// ===============================
+// SUBJECT DATA
+// ===============================
 
-        <div class="lesson-number">
-            ${lesson.id}
-        </div>
+const subjects = {
 
-        <div class="algebra-lesson-info">
+  algebra: algebraLessons,
 
-            <h3>${lesson.title}</h3>
+  geometry: geometryLessons
 
-            <p>${lesson.description}</p>
-
-        </div>
-
-        <button class="open-lesson">
-            Start →
-        </button>
-
-    `;
+};
 
 
-  algebraLessonsContainer.appendChild(
-    lessonCard
-  );
+// ===============================
+// CREATE LESSON CARDS
+// ===============================
+
+function createLessonCards(subject) {
+
+  const lessons =
+    subjects[subject];
 
 
-  const openLessonBtn =
-    lessonCard.querySelector(
-      ".open-lesson"
+  // Clear old lesson cards
+
+  subjectLessons.innerHTML = "";
+
+
+  lessons.forEach(function (lesson) {
+
+    const lessonCard =
+      document.createElement("div");
+
+
+    lessonCard.classList.add(
+      "algebra-lesson-card"
     );
 
 
-  openLessonBtn.addEventListener(
-    "click",
-    function () {
+    // Create unique ID
 
-      algebraPage.style.display =
-        "none";
-
-      lessonView.style.display =
-        "block";
+    const uniqueLessonId =
+      getLessonId(
+        subject,
+        lesson.id
+      );
 
 
-      lessonTitle.textContent =
-        lesson.title;
+    // Check whether lesson is completed
 
-      lessonDescription.textContent =
-        lesson.description;
-
-      lessonContent.innerHTML =
-        lesson.content;
+    const isCompleted =
+      completedLessons.includes(
+        uniqueLessonId
+      );
 
 
-      currentQuestion = 0;
+    // Create lesson card
 
-      score = 0;
+    lessonCard.innerHTML = `
 
-      questionAnswered = false;
+            <div class="lesson-number">
 
-      quizResult.textContent = "";
+                ${lesson.id}
 
-
-      answerInput.style.display =
-        "inline-block";
-
-      checkAnswer.style.display =
-        "inline-block";
+            </div>
 
 
-      showQuestion(lesson);
+            <div class="algebra-lesson-info">
+
+                <h3>
+                    ${lesson.title}
+                </h3>
+
+                <p>
+                    ${lesson.description}
+                </p>
+
+                <small>
+
+                    ${isCompleted
+        ? "✅ Completed"
+        : "Not completed"
+      }
+
+                </small>
+
+            </div>
 
 
-      lessonView.scrollIntoView({
-        behavior: "smooth"
-      });
+            <button class="open-lesson">
 
-    }
-  );
+                ${isCompleted
+        ? "Review →"
+        : "Start →"
+      }
 
-});
+            </button>
+
+        `;
+
+
+    // Add card to page
+
+    subjectLessons.appendChild(
+      lessonCard
+    );
+
+
+    // Get button
+
+    const openLessonBtn =
+      lessonCard.querySelector(
+        ".open-lesson"
+      );
+
+
+    // Open lesson when clicked
+
+    openLessonBtn.addEventListener(
+      "click",
+      function () {
+
+        openLesson(
+          subject,
+          lesson
+        );
+
+      }
+    );
+
+  });
+
+}
 
 
 // ===============================
-// OPEN ALGEBRA PAGE
+// OPEN LESSON
 // ===============================
 
-algebraBtn.addEventListener(
-  "click",
-  function () {
+function openLesson(subject, lesson) {
 
-    lessonsSection.style.display =
-      "none";
+  currentSubject =
+    subject;
 
-    algebraPage.style.display =
-      "block";
+  currentLesson =
+    lesson;
 
-    algebraPage.scrollIntoView({
-      behavior: "smooth"
-    });
+  currentQuestion =
+    0;
 
-  }
-);
+  score =
+    0;
 
-
-// ===============================
-// BACK TO LESSONS
-// ===============================
-
-const backToLessons =
-  document.getElementById("backToLessons");
-
-backToLessons.addEventListener(
-  "click",
-  function () {
-
-    algebraPage.style.display =
-      "none";
-
-    lessonsSection.style.display =
-      "block";
-
-    lessonsSection.scrollIntoView({
-      behavior: "smooth"
-    });
-
-  }
-);
+  questionAnswered =
+    false;
 
 
-// ===============================
-// BACK TO ALGEBRA
-// ===============================
+  // Hide pages
 
-const backToAlgebra =
-  document.getElementById("backToAlgebra");
+  lessonsSection.style.display =
+    "none";
 
-backToAlgebra.addEventListener(
-  "click",
-  function () {
+  subjectPage.style.display =
+    "none";
 
-    lessonView.style.display =
-      "none";
+  lessonView.style.display =
+    "block";
 
-    algebraPage.style.display =
-      "block";
 
-    algebraPage.scrollIntoView({
-      behavior: "smooth"
-    });
+  // Load lesson information
 
-  }
-);
+  lessonTitle.textContent =
+    lesson.title;
+
+  lessonDescription.textContent =
+    lesson.description;
+
+  lessonContent.innerHTML =
+    lesson.content;
+
+
+  // Clear result
+
+  quizResult.textContent =
+    "";
+
+
+  // Show quiz controls
+
+  answerInput.style.display =
+    "inline-block";
+
+  checkAnswer.style.display =
+    "inline-block";
+
+
+  nextQuestion.style.display =
+    "none";
+
+
+  // Show first question
+
+  showQuestion();
+
+
+  // Scroll to lesson
+
+  lessonView.scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
 
 
 // ===============================
 // SHOW QUESTION
 // ===============================
 
-function showQuestion(lesson) {
+function showQuestion() {
 
   const question =
-    lesson.practice[currentQuestion];
+    currentLesson.practice[
+    currentQuestion
+    ];
 
 
   practiceQuestion.textContent =
     question.question;
 
 
-  answerInput.value = "";
+  answerInput.value =
+    "";
 
-  answerFeedback.textContent = "";
+  answerFeedback.textContent =
+    "";
 
 
   scoreDisplay.textContent =
-    `Score: ${score} / ${lesson.practice.length}`;
+    `Score: ${score} / ${currentLesson.practice.length}`;
 
 
-  questionAnswered = false;
-
-
-  checkAnswer.disabled =
+  questionAnswered =
     false;
 
+
   answerInput.disabled =
+    false;
+
+  checkAnswer.disabled =
     false;
 
 
@@ -340,22 +416,15 @@ checkAnswer.addEventListener(
   function () {
 
     if (questionAnswered) {
+
       return;
+
     }
 
 
     const userAnswer =
-      Number(answerInput.value);
-
-
-    const currentLesson =
-      algebraLessons.find(
-        function (lesson) {
-
-          return lesson.title ===
-            lessonTitle.textContent;
-
-        }
+      Number(
+        answerInput.value
       );
 
 
@@ -365,7 +434,10 @@ checkAnswer.addEventListener(
       ];
 
 
-    if (userAnswer === question.answer) {
+    if (
+      userAnswer ===
+      question.answer
+    ) {
 
       answerFeedback.textContent =
         "Correct! 🎉 Well done.";
@@ -375,18 +447,19 @@ checkAnswer.addEventListener(
     } else {
 
       answerFeedback.textContent =
-        "Not quite. Try again!";
+        `Not quite. The correct answer is ${question.answer}.`;
 
     }
 
 
-    questionAnswered = true;
-
-
-    checkAnswer.disabled =
+    questionAnswered =
       true;
 
+
     answerInput.disabled =
+      true;
+
+    checkAnswer.disabled =
       true;
 
 
@@ -409,97 +482,264 @@ nextQuestion.addEventListener(
   "click",
   function () {
 
-    const currentLesson =
-      algebraLessons.find(
-        function (lesson) {
-
-          return lesson.title ===
-            lessonTitle.textContent;
-
-        }
-      );
-
-
     currentQuestion++;
 
+
+    // More questions remaining
 
     if (
       currentQuestion <
       currentLesson.practice.length
     ) {
 
-      showQuestion(currentLesson);
+      showQuestion();
 
-    } else {
+      return;
 
-      const totalQuestions =
-        currentLesson.practice.length;
-
-
-      const percentage =
-        (score / totalQuestions) * 100;
+    }
 
 
-      practiceQuestion.textContent =
-        "🎉 You have completed all the questions!";
+    // ===============================
+    // QUIZ FINISHED
+    // ===============================
+
+    const totalQuestions =
+      currentLesson.practice.length;
 
 
-      answerInput.style.display =
-        "none";
-
-      checkAnswer.style.display =
-        "none";
-
-      nextQuestion.style.display =
-        "none";
+    const percentage =
+      (score / totalQuestions) * 100;
 
 
-      answerFeedback.textContent =
-        "";
+    practiceQuestion.textContent =
+      "🎉 You have completed all the questions!";
 
 
-      scoreDisplay.textContent =
-        `Final Score: ${score} / ${totalQuestions}`;
+    answerInput.style.display =
+      "none";
+
+    checkAnswer.style.display =
+      "none";
+
+    nextQuestion.style.display =
+      "none";
 
 
-      // ===============================
-      // LESSON COMPLETED
-      // ===============================
-
-      if (percentage >= 70) {
-
-        quizResult.textContent =
-          `🎉 Excellent! You scored ${percentage}%. Lesson completed!`;
+    answerFeedback.textContent =
+      "";
 
 
-        if (
-          !completedLessons.includes(
-            currentLesson.id
-          )
-        ) {
-
-          completedLessons.push(
-            currentLesson.id
-          );
+    scoreDisplay.textContent =
+      `Final Score: ${score} / ${totalQuestions}`;
 
 
-          saveProgress();
+    // ===============================
+    // LESSON COMPLETED
+    // ===============================
 
-        }
+    if (percentage >= 70) {
+
+      quizResult.textContent =
+        `🎉 Excellent! You scored ${percentage}%. Lesson completed!`;
 
 
-        // UPDATE PROGRESS BAR
-        updateProgress();
+      const uniqueLessonId =
+        getLessonId(
+          currentSubject,
+          currentLesson.id
+        );
 
 
-      } else {
+      if (
+        !completedLessons.includes(
+          uniqueLessonId
+        )
+      ) {
 
-        quizResult.textContent =
-          `You scored ${percentage}%. Keep practicing and try again!`;
+        completedLessons.push(
+          uniqueLessonId
+        );
+
+
+        saveProgress();
 
       }
 
+
+      updateProgress();
+
+
+    } else {
+
+      quizResult.textContent =
+        `You scored ${percentage}%. You need at least 70% to complete this lesson. Keep practicing!`;
+
     }
+
+  }
+);
+
+
+// ===============================
+// OPEN SUBJECT
+// ===============================
+
+function openSubject(subject) {
+
+  lessonsSection.style.display =
+    "none";
+
+  lessonView.style.display =
+    "none";
+
+  subjectPage.style.display =
+    "block";
+
+
+  // Format subject name
+
+  const formattedName =
+    subject.charAt(0).toUpperCase() +
+    subject.slice(1);
+
+
+  // Display subject name
+
+  subjectTitle.textContent =
+    formattedName;
+
+
+  // Display subject description
+
+  subjectDescription.textContent =
+    `Master ${formattedName} through simple explanations, examples and interactive practice.`;
+
+
+  // Create lesson cards
+
+  createLessonCards(
+    subject
+  );
+
+
+  // Scroll to subject page
+
+  subjectPage.scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
+
+
+// ===============================
+// OPEN ALGEBRA
+// ===============================
+
+const algebraBtn =
+  document.getElementById(
+    "algebraBtn"
+  );
+
+
+algebraBtn.addEventListener(
+  "click",
+  function () {
+
+    openSubject(
+      "algebra"
+    );
+
+  }
+);
+
+
+// ===============================
+// OPEN GEOMETRY
+// ===============================
+
+const geometryBtn =
+  document.getElementById(
+    "geometryBtn"
+  );
+
+
+geometryBtn.addEventListener(
+  "click",
+  function () {
+
+    openSubject(
+      "geometry"
+    );
+
+  }
+);
+
+
+// ===============================
+// BACK TO SUBJECT LIST
+// ===============================
+
+backToLessons.addEventListener(
+  "click",
+  function () {
+
+    subjectPage.style.display =
+      "none";
+
+    lessonsSection.style.display =
+      "block";
+
+
+    lessonsSection.scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }
+);
+
+
+// ===============================
+// BACK TO CURRENT SUBJECT
+// ===============================
+
+backToSubject.addEventListener(
+  "click",
+  function () {
+
+    lessonView.style.display =
+      "none";
+
+    subjectPage.style.display =
+      "block";
+
+
+    // Format subject name
+
+    const formattedName =
+      currentSubject
+        .charAt(0)
+        .toUpperCase() +
+      currentSubject.slice(1);
+
+
+    subjectTitle.textContent =
+      formattedName;
+
+
+    subjectDescription.textContent =
+      `Master ${formattedName} through simple explanations, examples and interactive practice.`;
+
+
+    // Recreate lesson cards
+
+    createLessonCards(
+      currentSubject
+    );
+
+
+    subjectPage.scrollIntoView({
+      behavior: "smooth"
+    });
 
   }
 );
@@ -510,18 +750,6 @@ nextQuestion.addEventListener(
 // ===============================
 
 function updateProgress() {
-
-  const totalLessons =
-    algebraLessons.length;
-
-
-  const completed =
-    completedLessons.length;
-
-
-  const percentage =
-    (completed / totalLessons) * 100;
-
 
   const progressText =
     document.getElementById(
@@ -547,10 +775,67 @@ function updateProgress() {
     );
 
 
-  // Overall progress
+  // ===============================
+  // CALCULATE TOTAL LESSONS
+  // ===============================
+
+  let totalLessons =
+    0;
+
+  let totalCompleted =
+    0;
+
+
+  Object.keys(subjects).forEach(
+    function (subject) {
+
+      totalLessons +=
+        subjects[subject].length;
+
+
+      subjects[subject].forEach(
+        function (lesson) {
+
+          const uniqueLessonId =
+            getLessonId(
+              subject,
+              lesson.id
+            );
+
+
+          if (
+            completedLessons.includes(
+              uniqueLessonId
+            )
+          ) {
+
+            totalCompleted++;
+
+          }
+
+        }
+      );
+
+    }
+  );
+
+
+  // ===============================
+  // CALCULATE PERCENTAGE
+  // ===============================
+
+  const percentage =
+    totalLessons === 0
+      ? 0
+      : (totalCompleted / totalLessons) * 100;
+
+
+  // ===============================
+  // UPDATE OVERALL PROGRESS
+  // ===============================
 
   progressText.textContent =
-    `${completed} of ${totalLessons} lessons completed`;
+    `${totalCompleted} of ${totalLessons} lessons completed`;
 
 
   overallProgressFill.style.width =
@@ -558,83 +843,112 @@ function updateProgress() {
 
 
   overallPercentage.textContent =
-    `${percentage}%`;
+    `${percentage.toFixed(1)}%`;
 
 
-  // Clear previous lesson list
+  // ===============================
+  // CLEAR OLD PROGRESS
+  // ===============================
 
-  lessonProgressList.innerHTML = "";
-
-
-  // Create progress item for every lesson
-
-  algebraLessons.forEach(
-    function (lesson) {
-
-      const lessonItem =
-        document.createElement("div");
+  lessonProgressList.innerHTML =
+    "";
 
 
-      lessonItem.classList.add(
-        "lesson-progress-item"
-      );
+  // ===============================
+  // DISPLAY SUBJECT PROGRESS
+  // ===============================
+
+  Object.keys(subjects).forEach(
+    function (subject) {
+
+      const formattedName =
+        subject.charAt(0).toUpperCase() +
+        subject.slice(1);
 
 
-      const isCompleted =
-        completedLessons.includes(
-          lesson.id
+      // Subject heading
+
+      const subjectHeading =
+        document.createElement(
+          "h3"
         );
 
 
-      if (isCompleted) {
-
-        lessonItem.innerHTML = `
-
-                    <div class="lesson-progress-icon">
-                        ✅
-                    </div>
-
-                    <div class="lesson-progress-info">
-
-                        <h4>
-                            ${lesson.title}
-                        </h4>
-
-                        <p>
-                            Completed
-                        </p>
-
-                    </div>
-
-                `;
-
-      } else {
-
-        lessonItem.innerHTML = `
-
-                    <div class="lesson-progress-icon">
-                        🔒
-                    </div>
-
-                    <div class="lesson-progress-info">
-
-                        <h4>
-                            ${lesson.title}
-                        </h4>
-
-                        <p>
-                            Not completed
-                        </p>
-
-                    </div>
-
-                `;
-
-      }
+      subjectHeading.textContent =
+        formattedName;
 
 
       lessonProgressList.appendChild(
-        lessonItem
+        subjectHeading
+      );
+
+
+      // Lessons
+
+      subjects[subject].forEach(
+        function (lesson) {
+
+          const lessonItem =
+            document.createElement(
+              "div"
+            );
+
+
+          lessonItem.classList.add(
+            "lesson-progress-item"
+          );
+
+
+          const uniqueLessonId =
+            getLessonId(
+              subject,
+              lesson.id
+            );
+
+
+          const isCompleted =
+            completedLessons.includes(
+              uniqueLessonId
+            );
+
+
+          lessonItem.innerHTML = `
+
+                        <div class="lesson-progress-icon">
+
+                            ${isCompleted
+              ? "✅"
+              : "🔒"
+            }
+
+                        </div>
+
+
+                        <div class="lesson-progress-info">
+
+                            <h4>
+                                ${lesson.title}
+                            </h4>
+
+                            <p>
+
+                                ${isCompleted
+              ? "Completed"
+              : "Not completed"
+            }
+
+                            </p>
+
+                        </div>
+
+                    `;
+
+
+          lessonProgressList.appendChild(
+            lessonItem
+          );
+
+        }
       );
 
     }
@@ -644,7 +958,7 @@ function updateProgress() {
 
 
 // ===============================
-// LOAD SAVED PROGRESS
+// INITIALIZE
 // ===============================
 
 updateProgress();

@@ -59,6 +59,11 @@ body {
   background-color: #eef5ff;
   padding: 70px 7%;
 }
+.hero img{
+  height: 550px;
+  width: 900px;
+  background: none;
+}
 
 .hero-content {
   max-width: 650px;
