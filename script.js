@@ -881,7 +881,7 @@ function updateProgress() {
       lessonProgressList.appendChild(
         subjectHeading
       );
-
+      
 
       // Lessons
 

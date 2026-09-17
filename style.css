@@ -59,7 +59,8 @@ body {
   background-color: #eef5ff;
   padding: 70px 7%;
 }
-.hero img{
+
+.hero img {
   height: 550px;
   width: 900px;
   background: none;
@@ -558,7 +559,7 @@ footer {
   }
 }
 
-/* progress */
+/* progress page of the lessons */
 .progress-page {
   padding: 80px 7%;
   background-color: #f7f9fc;
@@ -594,41 +595,61 @@ footer {
   border-radius: 20px;
 }
 
-.progress-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* lessons in small sscreen */
+@media (max-width: 768px) {
+  #lessonProgressList {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+
+  }
+
+  /* Vertical line between the two columns */
+    #lessonProgressList > div:nth-child(even) {
+        border-left: 2px solid red;
+        padding-left: 10px;
+        margin-right: 10px;
+    }
+
 }
 
-.progress-header strong {
-  font-size: 24px;
-  color: #2563eb;
-}
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .progress-header strong {
+    font-size: 24px;
+    color: #2563eb;
+  }
 
 
-.lesson-progress-list {
-  margin-top: 30px;
-}
+  .lesson-progress-list {
+    margin-top: 30px;
+  }
 
-.lesson-progress-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 18px 0;
+  .lesson-progress-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 0;
 
-  border-bottom: 1px solid #e5e7eb;
-}
+    border-bottom: 1px solid #e5e7eb;
+  }
 
-.lesson-progress-icon {
-  font-size: 22px;
-}
+  .lesson-progress-icon {
+    font-size: 22px;
+  }
 
-.lesson-progress-info h4 {
-  margin: 0 0 5px;
-}
+  .lesson-progress-info h4 {
+    margin: 0 0 5px;
+  }
 
-.lesson-progress-info p {
-  margin: 0;
-  color: #666;
-  font-size: 14px;
-}
+  .lesson-progress-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+  }
