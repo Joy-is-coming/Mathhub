@@ -11,7 +11,7 @@ body {
 }
 
 .navbar {
-  width: 100px;
+  width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
@@ -58,16 +58,38 @@ body {
   align-items: center;
   background-color: #eef5ff;
   padding: 70px 7%;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero img {
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* .hero img {
   height: 550px;
   width: 900px;
   background: none;
-}
+  position: relative;
+  z-index: 2;
+} */
 
 .hero-content {
   max-width: 650px;
+  position: relative;
+  z-index: 2;
 }
 
 .small-title {
@@ -79,10 +101,20 @@ body {
   padding: 10px;
 }
 
+.small-title1 {
+  color: #2563eb;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
 .hero h1 {
   font-size: 55px;
   line-height: 1.1;
   margin-bottom: 20px;
+  color: white;
 }
 
 .hero h1 span {
@@ -92,10 +124,11 @@ body {
 
 .hero-text {
   max-width: 550px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
-  color: #5d687b;
+  color: white;
   margin-bottom: 30px;
+  font-style: italic;
 }
 
 .start-btn,
@@ -116,7 +149,7 @@ body {
 }
 
 /* topic section */
-.topic {
+.topics {
   padding: 70px 7%;
 }
 
@@ -252,16 +285,14 @@ footer {
   }
 
   .menu.show {
-    display: grid;
+    display: flex;
     flex-direction: column;
-    
 
     position: absolute;
     top: 70px;
     right: 6%;
 
-    background-color: green;
-    
+    background-color: white;
 
     padding: 20px;
 
@@ -271,8 +302,6 @@ footer {
 
     gap: 15px;
   }
-
-  
 
   .hero {
     min-height: 450px;
@@ -287,7 +316,7 @@ footer {
     font-size: 16px;
   }
 
-  .topic {
+  .topics {
     padding: 50px 6%;
   }
 
@@ -371,7 +400,7 @@ footer {
   }
 }
 
-/* Algebra Page */
+/* Generic Subject Page */
 .subject-page {
   display: none;
   padding: 70px 7%;
@@ -389,28 +418,28 @@ footer {
   font-weight: bold;
 }
 
-.algebra-header {
+.subject-header {
   max-width: 650px;
   margin-bottom: 40px;
 }
 
-.algebra-header h2 {
+.subject-header h2 {
   font-size: 42px;
   margin-bottom: 15px;
 }
 
-.algebra-header p {
+.subject-header p {
   color: #687386;
   line-height: 1.6;
 }
 
-.algebra-lessons {
+.subject-lessons {
   display: grid;
   gap: 15px;
   max-width: 800px;
 }
 
-.algebra-lesson-card {
+.subject-lesson-card {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -433,15 +462,15 @@ footer {
   font-weight: bold;
 }
 
-.algebra-lesson-info {
+.subject-lesson-info {
   flex: 1;
 }
 
-.algebra-lesson-info h3 {
+.subject-lesson-info h3 {
   margin-bottom: 5px;
 }
 
-.algebra-lesson-info p {
+.subject-lesson-info p {
   color: #687386;
   font-size: 14px;
 }
@@ -611,49 +640,412 @@ footer {
   }
 
   /* Vertical line between the two columns */
-    #lessonProgressList > div:nth-child(even) {
-        border-left: 2px solid red;
-        padding-left: 10px;
-        margin-right: 10px;
-    }
+  #lessonProgressList>div:nth-child(even) {
+    border-left: 2px solid red;
+    padding-left: 10px;
+    margin-right: 10px;
+  }
 
 }
 
-  .progress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-header strong {
+  font-size: 24px;
+  color: #2563eb;
+}
+
+
+.lesson-progress-list {
+  margin-top: 30px;
+}
+
+.lesson-progress-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 0;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.lesson-progress-icon {
+  font-size: 22px;
+}
+
+.lesson-progress-info h4 {
+  margin: 0 0 5px;
+}
+
+.lesson-progress-info p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* =========================================================
+   MathHub generic subject aliases
+   ========================================================= */
+
+.subject-lesson-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.subject-lesson-info {
+  flex: 1;
+}
+
+.subject-lesson-info h3 {
+  margin-bottom: 5px;
+}
+
+.subject-lesson-info p {
+  color: #687386;
+  font-size: 14px;
+}
+
+/* Keep compatibility with the current script.js generated classes */
+.algebra-lesson-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.algebra-lesson-info {
+  flex: 1;
+}
+
+.algebra-lesson-info h3 {
+  margin-bottom: 5px;
+}
+
+.algebra-lesson-info p {
+  color: #687386;
+  font-size: 14px;
+}
+
+.lesson-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Mobile hero image */
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
   }
 
-  .progress-header strong {
-    font-size: 24px;
-    color: #2563eb;
+  .hero img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
   }
 
+  .hero-content {
+    max-width: 100%;
+  }
+}
 
-  .lesson-progress-list {
-    margin-top: 30px;
+@media (max-width: 500px) {
+  .lesson-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
-  .lesson-progress-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 18px 0;
-
-    border-bottom: 1px solid #e5e7eb;
+  .lesson-btn {
+    width: 100%;
+    margin-left: 0;
   }
 
-  .lesson-progress-icon {
-    font-size: 22px;
+  .practice-section input {
+    width: 100%;
   }
 
-  .lesson-progress-info h4 {
-    margin: 0 0 5px;
+  .practice-section button {
+    margin-left: 0;
+  }
+}
+
+
+/* =====================================
+   STANDALONE PRACTICE MODE
+   ===================================== */
+.practice-page {
+  padding: 80px 7%;
+  background-color: #eef5ff;
+  min-height: 650px;
+}
+
+.practice-panel {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.practice-panel h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.practice-intro {
+  color: #687386;
+  margin-bottom: 25px;
+}
+
+.practice-subjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.practice-subject-card {
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  padding: 28px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.practice-subject-card:hover {
+  transform: translateY(-3px);
+  border-color: #2563eb;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
+}
+
+.practice-subject-card span:not(.practice-subject-icon) {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.practice-subject-card small {
+  color: #687386;
+}
+
+.practice-subject-icon {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.practice-quiz-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.practice-back {
+  margin-bottom: 0;
+}
+
+.practice-counter {
+  font-weight: bold;
+  color: #2563eb;
+  white-space: nowrap;
+}
+
+#practiceQuestionText {
+  font-size: 27px;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.practice-options {
+  display: grid;
+  gap: 12px;
+}
+
+.practice-option {
+  width: 100%;
+  border: 1px solid #dbe3ee;
+  background-color: white;
+  padding: 16px 18px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.practice-option:hover:not(:disabled) {
+  border-color: #2563eb;
+  background-color: #f8fbff;
+}
+
+.practice-option:disabled {
+  cursor: default;
+}
+
+.practice-option.correct {
+  border-color: #16a34a;
+  background-color: #f0fdf4;
+}
+
+.practice-option.incorrect {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.practice-feedback {
+  min-height: 25px;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+.practice-feedback.correct-text {
+  color: #15803d;
+}
+
+.practice-feedback.incorrect-text {
+  color: #b91c1c;
+}
+
+.practice-score-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+  color: #687386;
+}
+
+.practice-score-row strong {
+  color: #172033;
+}
+
+.practice-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.previous-practice-btn {
+  border: 1px solid #d7deea;
+  background: white;
+  color: #172033;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.previous-practice-btn:hover:not(:disabled) {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.previous-practice-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.next-practice-btn {
+  border: none;
+  padding: 13px 20px;
+  margin-top: 22px;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.next-practice-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.practice-result {
+  text-align: center;
+}
+
+.result-icon {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.result-score {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2563eb;
+  margin: 20px 0 10px;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.result-actions .continue-btn {
+  border: 1px solid #2563eb;
+}
+
+@media (max-width: 700px) {
+  .practice-subjects {
+    grid-template-columns: 1fr;
   }
 
-  .lesson-progress-info p {
-    margin: 0;
-    color: #666;
-    font-size: 14px;
+  .practice-panel {
+    padding: 25px 20px;
   }
+
+  .practice-navigation {
+    flex-direction: column-reverse;
+  }
+
+  .practice-navigation button {
+    width: 100%;
+  }
+
+  .practice-quiz-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .practice-counter {
+    white-space: normal;
+  }
+
+  #practiceQuestionText {
+    font-size: 23px;
+  }
+
+  .practice-score-row {
+    flex-direction: column;
+  }
+}
+
+.practice-option.selected {
+  outline: 3px solid #2563eb;
+  outline-offset: 1px;
+}

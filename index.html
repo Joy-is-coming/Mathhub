@@ -10,31 +10,36 @@
 </head>
 
 <body>
+
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="logo">
-      Math<span>Hub</span>
-    </div>
+    <div class="logo">Math<span>Hub</span></div>
 
     <div class="menu" id="menu">
       <a href="#">Home</a>
-      <a href="">Lessons</a>
-      <a href="">Practice</a>
-      <a href="">Quiz</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#practice">Practice</a>
+      <a href="#quiz">Quiz</a>
       <a href="#progress">Progress</a>
     </div>
+
     <button class="menu-btn" id="menuBtn">☰</button>
   </nav>
 
-  <!-- Hero section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
 
-      <p class="small-title">WELCOME TO MATHHUB</p>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="./278200.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="small-title1">WELCOME TO MATHHUB</p>
 
       <h1>
         Learn Mathematics.
-        <span>Understand & Master it.</span>
+        <span>Understand &amp; Master it.</span>
       </h1>
 
       <p class="hero-text">
@@ -47,13 +52,14 @@
       </button>
     </div>
 
-    <div>
-      <img src="ChatGPT Image Sep 17, 2026, 03_18_33 PM.png" alt="">
-    </div>
+    <!-- <div class="hero-image">
+      <img src="ChatGPT Image Sep 17, 2026, 03_18_33 PM.png" alt="Mathematics illustration">
+    </div> -->
+
 
   </section>
 
-  <!-- Lesson Section -->
+  <!-- Lessons -->
   <section class="lessons" id="lessons">
     <div class="section-heading">
       <div>
@@ -63,6 +69,7 @@
     </div>
 
     <div class="lesson-container">
+
       <div class="lesson-card">
         <div class="lesson-icon">🔢</div>
         <div>
@@ -70,131 +77,91 @@
           <p>Equations, expressions and factorization.</p>
           <span>100 Lessons</span>
         </div>
-
         <button class="lesson-btn" id="algebraBtn">Start →</button>
       </div>
 
-
       <div class="lesson-card">
         <div class="lesson-icon">📐</div>
-
         <div>
           <h3>Geometry</h3>
           <p>Shapes, angles, areas and measurements.</p>
           <span>100 Lessons</span>
         </div>
-
-        <button class="lesson-btn" id="geometryBtn">
-          Start →
-        </button>
+        <button class="lesson-btn" id="geometryBtn">Start →</button>
       </div>
-
 
       <div class="lesson-card">
         <div class="lesson-icon">📊</div>
-
         <div>
           <h3>Statistics</h3>
           <p>Data, averages, graphs and probability.</p>
-          <span>7 Lessons</span>
+          <span>Coming Soon</span>
         </div>
-
-        <button class="lesson-btn">Start →</button>
+        <button class="lesson-btn" type="button" disabled>Coming Soon</button>
       </div>
-
 
       <div class="lesson-card">
         <div class="lesson-icon">📈</div>
-
         <div>
           <h3>Calculus</h3>
           <p>Limits, differentiation and integration.</p>
-          <span>10 Lessons</span>
+          <span>Coming Soon</span>
         </div>
-
-        <button class="lesson-btn">Start →</button>
+        <button class="lesson-btn" type="button" disabled>Coming Soon</button>
       </div>
 
     </div>
-
   </section>
+
   <!-- Popular Topics -->
   <section class="topics">
     <div class="section-heading">
       <div>
         <p class="small-title">LEARN</p>
         <h2>Popular Topics</h2>
-        <a href="#">VIEW ALL →</a>
+        <a href="#lessons">VIEW ALL →</a>
       </div>
+    </div>
 
-      <div class="topic-container">
-        <!-- Algebra -->
-        <div class="topic-card">
-          <div class="topic-icon">
-            🔢
-          </div>
-          <h3>Algebra</h3>
-          <p>
-            Learn equations, expressions,
-            factorization and more.
-          </p>
-          <span>100 Lessons →</span>
-        </div>
+    <div class="topic-container">
 
-      </div>
-
-      <!-- Geometry -->
       <div class="topic-card">
-        <div class="topic-icon">
-          📐
-        </div>
-        <h3>Geometry</h3>
-        <p>
-          Explore shapes, angles,
-          areas and measurements.
-        </p>
+        <div class="topic-icon">🔢</div>
+        <h3>Algebra</h3>
+        <p>Learn equations, expressions, factorization and more.</p>
         <span>100 Lessons →</span>
       </div>
 
-      <!-- Statistics -->
       <div class="topic-card">
-        <div class="topic-icon">
-          📊
-        </div>
+        <div class="topic-icon">📐</div>
+        <h3>Geometry</h3>
+        <p>Explore shapes, angles, areas and measurements.</p>
+        <span>100 Lessons →</span>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">📊</div>
         <h3>Statistics</h3>
-        <p>
-          Understand data, averages,
-          probability and graphs.
-        </p>
-        <span>7 Lessons →</span>
+        <p>Understand data, averages, probability and graphs.</p>
+        <span>Coming Soon</span>
       </div>
-
-      <!-- Calculus -->
 
       <div class="topic-card">
-        <div class="topic-icon">
-          📈
-        </div>
+        <div class="topic-icon">📈</div>
         <h3>Calculus</h3>
-        <p>
-          Learn differentiation,
-          integration and limits.
-        </p>
-        <span>10 Lessons →</span>
+        <p>Learn differentiation, integration and limits.</p>
+        <span>Coming Soon</span>
       </div>
+
     </div>
   </section>
 
   <!-- Continue Learning -->
-
   <section class="continue">
     <div class="continue-content">
       <p class="small-title">KEEP GOING</p>
       <h2>Continue Learning</h2>
-      <p>
-        You're making progress. Continue where
-        you stopped last time.
-      </p>
+      <p>You're making progress. Continue where you stopped last time.</p>
 
       <div class="progress">
         <div class="progress-info">
@@ -206,56 +173,114 @@
           <div class="progress-fill"></div>
         </div>
 
-        <button class="continue-btn">
+        <button class="continue-btn" type="button">
           Continue Lesson →
         </button>
+      </div>
+    </div>
+  </section>
 
+
+  <!-- Practice Mode -->
+  <section class="practice-page" id="practice">
+
+    <div class="section-heading">
+      <div>
+        <p class="small-title">PRACTICE MODE</p>
+        <h2>Test Your Mathematics Skills 🧠</h2>
+        <p>Choose a subject and answer 10 randomly selected questions.</p>
+      </div>
+    </div>
+
+    <div class="practice-panel" id="practiceStart">
+      <h3>Choose a Subject</h3>
+      <p class="practice-intro">Your questions will be randomized every time you start.</p>
+
+      <div class="practice-subjects">
+        <button class="practice-subject-card" data-practice-subject="algebra" type="button">
+          <span class="practice-subject-icon">🔢</span>
+          <span>Algebra</span>
+          <small>20-question bank</small>
+        </button>
+
+        <button class="practice-subject-card" data-practice-subject="geometry" type="button">
+          <span class="practice-subject-icon">📐</span>
+          <span>Geometry</span>
+          <small>20-question bank</small>
+        </button>
+      </div>
+    </div>
+
+    <div class="practice-panel practice-quiz" id="practiceQuiz" hidden>
+      <div class="practice-quiz-top">
+        <button class="back-btn practice-back" id="backToPracticeSubjects" type="button">← Choose Subject</button>
+        <span class="practice-counter" id="practiceProgress">Question 1 of 10</span>
+      </div>
+
+      <p class="small-title" id="practiceSubjectLabel">ALGEBRA PRACTICE</p>
+      <h3 id="practiceQuestionText"></h3>
+
+      <div class="practice-options" id="practiceOptions"></div>
+
+      <p class="practice-feedback" id="practiceFeedback" aria-live="polite"></p>
+
+      <div class="practice-score-row">
+        <strong id="practiceScore">Score: 0 / 10</strong>
+        <span id="practiceAnswered">Answered: 0 / 10</span>
+      </div>
+
+      <div class="practice-navigation">
+        <button class="previous-practice-btn" id="practicePreviousQuestion" type="button" disabled>← Previous</button>
+        <button class="next-practice-btn" id="practiceNextQuestion" type="button" disabled>Next Question →</button>
+      </div>
+    </div>
+
+    <div class="practice-panel practice-result" id="practiceResult" hidden>
+      <div class="result-icon">🎉</div>
+      <p class="small-title">PRACTICE COMPLETE</p>
+      <h3 id="practiceResultTitle">Great work!</h3>
+      <div class="result-score" id="practiceResultScore">0 / 10</div>
+      <p id="practiceResultSummary">You answered 0 questions correctly.</p>
+      <div class="result-actions">
+        <button class="start-btn" id="practiceRetry" type="button">Try Again 🔄</button>
+        <button class="continue-btn" id="practiceChooseAnother" type="button">Choose Another Subject</button>
       </div>
     </div>
 
   </section>
 
-  <!-- Subject Lesson Page -->
-
+  <!-- Generic Subject Lesson Page -->
   <section class="subject-page" id="subjectPage">
 
     <button class="back-btn" id="backToLessons">
       ← Back to Lessons
     </button>
 
-    <div class="algebra-header">
+    <div class="subject-header">
+      <p class="small-title">MATHEMATICS</p>
 
-      <p class="small-title">
-        MATHEMATICS
-      </p>
-
-      <h2 id="subjectTitle">
-        Algebra
-      </h2>
+      <h2 id="subjectTitle">Algebra</h2>
 
       <p id="subjectDescription">
-        Master the fundamentals of mathematics
-        through simple explanations and practical examples.
+        Master the fundamentals of mathematics through simple
+        explanations and practical examples.
       </p>
 
-      <div class="algebra-lessons" id="subjectLessons">
-      </div>
-
+      <div class="subject-lessons" id="subjectLessons"></div>
     </div>
 
   </section>
 
-
-  <!-- Lesson View Page -->
+  <!-- Lesson View -->
   <section class="lesson-view" id="lessonView">
 
     <button class="back-btn" id="backToSubject">
-      ← Back to Lessons
+      ← Back to Subject
     </button>
 
     <div class="lesson-content">
 
-      <p class="small-title">ALGEBRA LESSON</p>
+      <p class="small-title">MATHEMATICS LESSON</p>
 
       <h2 id="lessonTitle">Introduction to Algebra</h2>
 
@@ -265,7 +290,7 @@
 
       <div id="lessonContent"></div>
 
-      <div class="practice-section">
+      <div class="practice-section" id="lessonPractice">
 
         <h3>Try It Yourself 🧠</h3>
 
@@ -273,90 +298,70 @@
 
         <input type="number" id="answerInput" placeholder="Enter your answer">
 
-        <button id="checkAnswer">
+        <button id="checkAnswer" type="button">
           Check Answer
         </button>
 
         <p id="answerFeedback"></p>
 
-        <p id="scoreDisplay">
-          Score: 0 / 0
-        </p>
+        <p id="scoreDisplay">Score: 0 / 0</p>
 
         <div id="quizResult"></div>
 
-        <button id="nextQuestion">
+        <button id="nextQuestion" type="button">
           Next Question →
         </button>
 
       </div>
+
     </div>
   </section>
 
-  <!-- progress page section -->
-
+  <!-- Progress -->
   <section class="progress-page" id="progress">
 
     <div class="section-heading">
-
-      <p class="small-title">YOUR JOURNEY</p>
-
-      <h2>Your Learning Progress</h2>
-
-      <p>
-        Track the lessons you have completed
-        and keep improving your Mathematics skills.
-      </p>
-
+      <div>
+        <p class="small-title">YOUR JOURNEY</p>
+        <h2>Your Learning Progress</h2>
+        <p>
+          Track the lessons you have completed and keep improving
+          your Mathematics skills.
+        </p>
+      </div>
     </div>
-
 
     <div class="progress-summary">
 
       <div class="progress-header">
-
         <div>
-          <h3>Algebra</h3>
-
-          <p id="progressText">
-            0 of 100 lessons completed
-          </p>
+          <h3>Learning Progress</h3>
+          <p id="progressText">0 of 200 lessons completed</p>
         </div>
 
-        <strong id="overallPercentage">
-          0%
-        </strong>
-
+        <strong id="overallPercentage">0%</strong>
       </div>
-
 
       <div class="overall-progress-bar">
-
-        <div class="overall-progress-fill" id="overallProgressFill">
-
-        </div>
-
+        <div class="overall-progress-fill" id="overallProgressFill"></div>
       </div>
 
-
-      <div class="lesson-progress-list" id="lessonProgressList">
-
-      </div>
+      <div class="lesson-progress-list" id="lessonProgressList"></div>
 
     </div>
-
   </section>
 
-  <!-- Bottom Navigation -->
+  <!-- Footer -->
   <footer>
-    <p>
-      © 2026 MathHub. Learn. Practice. Master.
-    </p>
+    <p>© 2026 MathHub. Learn. Practice. Master.</p>
   </footer>
 
+  <!-- IMPORTANT: lesson data must load before script.js -->
   <script src="Lessons/algebra.js"></script>
   <script src="Lessons/geometry.js"></script>
   <script src="script.js"></script>
+  <script src="practice.js"></script>
+
 </body>
 
 </html>

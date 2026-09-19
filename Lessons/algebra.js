@@ -1,11 +1,11 @@
 const algebraLessons = [
 
-  {
-    id: 1,
-    title: "Introduction to Algebra",
-    description: "Learn the basic ideas and language of algebra.",
+    {
+        id: 1,
+        title: "Introduction to Algebra",
+        description: "Learn the basic ideas and language of algebra.",
 
-    content: `
+        content: `
             <h3>What is Algebra?</h3>
 
             <p>
@@ -31,37 +31,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "If x = 5, what is x + 3?",
-        answer: 8
-      },
-      {
-        question: "If y = 10, what is y - 4?",
-        answer: 6
-      },
-      {
-        question: "If x = 7, what is x + 2?",
-        answer: 9
-      },
-      {
-        question: "If a = 6, what is a × 2?",
-        answer: 12
-      },
-      {
-        question: "If b = 20, what is b ÷ 4?",
-        answer: 5
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "If x = 5, what is x + 3?",
+                answer: 8
+            },
+            {
+                question: "If y = 10, what is y - 4?",
+                answer: 6
+            },
+            {
+                question: "If x = 7, what is x + 2?",
+                answer: 9
+            },
+            {
+                question: "If a = 6, what is a × 2?",
+                answer: 12
+            },
+            {
+                question: "If b = 20, what is b ÷ 4?",
+                answer: 5
+            }
+        ]
+    },
 
 
-  {
-    id: 2,
-    title: "Algebraic Expressions",
-    description: "Learn how numbers and variables form algebraic expressions.",
+    {
+        id: 2,
+        title: "Algebraic Expressions",
+        description: "Learn how numbers and variables form algebraic expressions.",
 
-    content: `
+        content: `
             <h3>What is an Algebraic Expression?</h3>
 
             <p>
@@ -99,37 +99,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "If x = 2, what is 3x + 5?",
-        answer: 11
-      },
-      {
-        question: "If x = 4, what is 2x + 3?",
-        answer: 11
-      },
-      {
-        question: "If y = 5, what is 4y?",
-        answer: 20
-      },
-      {
-        question: "If a = 3, what is 5a + 2?",
-        answer: 17
-      },
-      {
-        question: "If b = 6, what is 2b - 4?",
-        answer: 8
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "If x = 2, what is 3x + 5?",
+                answer: 11
+            },
+            {
+                question: "If x = 4, what is 2x + 3?",
+                answer: 11
+            },
+            {
+                question: "If y = 5, what is 4y?",
+                answer: 20
+            },
+            {
+                question: "If a = 3, what is 5a + 2?",
+                answer: 17
+            },
+            {
+                question: "If b = 6, what is 2b - 4?",
+                answer: 8
+            }
+        ]
+    },
 
 
-  {
-    id: 3,
-    title: "Like and Unlike Terms",
-    description: "Learn how to identify and combine like terms.",
+    {
+        id: 3,
+        title: "Like and Unlike Terms",
+        description: "Learn how to identify and combine like terms.",
 
-    content: `
+        content: `
             <h3>Like Terms</h3>
 
             <p>
@@ -161,37 +161,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "Simplify: 3x + 5x. What is the coefficient of x?",
-        answer: 8
-      },
-      {
-        question: "Simplify: 7x + 2x. What is the coefficient of x?",
-        answer: 9
-      },
-      {
-        question: "Simplify: 10y - 4y. What is the coefficient of y?",
-        answer: 6
-      },
-      {
-        question: "Simplify: 6a + 3a. What is the coefficient of a?",
-        answer: 9
-      },
-      {
-        question: "Simplify: 12b - 5b. What is the coefficient of b?",
-        answer: 7
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "Simplify: 3x + 5x. What is the coefficient of x?",
+                answer: 8
+            },
+            {
+                question: "Simplify: 7x + 2x. What is the coefficient of x?",
+                answer: 9
+            },
+            {
+                question: "Simplify: 10y - 4y. What is the coefficient of y?",
+                answer: 6
+            },
+            {
+                question: "Simplify: 6a + 3a. What is the coefficient of a?",
+                answer: 9
+            },
+            {
+                question: "Simplify: 12b - 5b. What is the coefficient of b?",
+                answer: 7
+            }
+        ]
+    },
 
 
-  {
-    id: 4,
-    title: "Simplifying Algebraic Expressions",
-    description: "Learn how to simplify algebraic expressions.",
+    {
+        id: 4,
+        title: "Simplifying Algebraic Expressions",
+        description: "Learn how to simplify algebraic expressions.",
 
-    content: `
+        content: `
             <h3>What Does Simplify Mean?</h3>
 
             <p>
@@ -223,37 +223,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "Simplify 4x + 3x. What is the coefficient of x?",
-        answer: 7
-      },
-      {
-        question: "Simplify 8x - 3x. What is the coefficient of x?",
-        answer: 5
-      },
-      {
-        question: "Simplify 5y + 6y. What is the coefficient of y?",
-        answer: 11
-      },
-      {
-        question: "Simplify 9a - 4a. What is the coefficient of a?",
-        answer: 5
-      },
-      {
-        question: "Simplify 7b + 2b. What is the coefficient of b?",
-        answer: 9
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "Simplify 4x + 3x. What is the coefficient of x?",
+                answer: 7
+            },
+            {
+                question: "Simplify 8x - 3x. What is the coefficient of x?",
+                answer: 5
+            },
+            {
+                question: "Simplify 5y + 6y. What is the coefficient of y?",
+                answer: 11
+            },
+            {
+                question: "Simplify 9a - 4a. What is the coefficient of a?",
+                answer: 5
+            },
+            {
+                question: "Simplify 7b + 2b. What is the coefficient of b?",
+                answer: 9
+            }
+        ]
+    },
 
 
-  {
-    id: 5,
-    title: "Constants and Coefficients",
-    description: "Understand constants and coefficients in algebra.",
+    {
+        id: 5,
+        title: "Constants and Coefficients",
+        description: "Understand constants and coefficients in algebra.",
 
-    content: `
+        content: `
             <h3>Constant</h3>
 
             <p>
@@ -289,37 +289,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "What is the coefficient of x in 7x + 3?",
-        answer: 7
-      },
-      {
-        question: "What is the coefficient of y in 9y + 4?",
-        answer: 9
-      },
-      {
-        question: "What is the constant in 5x + 8?",
-        answer: 8
-      },
-      {
-        question: "What is the coefficient of a in 6a + 2?",
-        answer: 6
-      },
-      {
-        question: "What is the constant in 3b + 10?",
-        answer: 10
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "What is the coefficient of x in 7x + 3?",
+                answer: 7
+            },
+            {
+                question: "What is the coefficient of y in 9y + 4?",
+                answer: 9
+            },
+            {
+                question: "What is the constant in 5x + 8?",
+                answer: 8
+            },
+            {
+                question: "What is the coefficient of a in 6a + 2?",
+                answer: 6
+            },
+            {
+                question: "What is the constant in 3b + 10?",
+                answer: 10
+            }
+        ]
+    },
 
 
-  {
-    id: 6,
-    title: "The Distributive Property",
-    description: "Learn how to remove brackets using multiplication.",
+    {
+        id: 6,
+        title: "The Distributive Property",
+        description: "Learn how to remove brackets using multiplication.",
 
-    content: `
+        content: `
             <h3>Distributive Property</h3>
 
             <p>
@@ -349,37 +349,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "Expand 2(x + 3). What is the constant term?",
-        answer: 6
-      },
-      {
-        question: "Expand 4(x + 2). What is the constant term?",
-        answer: 8
-      },
-      {
-        question: "Expand 5(x + 1). What is the constant term?",
-        answer: 5
-      },
-      {
-        question: "Expand 3(y + 4). What is the constant term?",
-        answer: 12
-      },
-      {
-        question: "Expand 6(a + 2). What is the constant term?",
-        answer: 12
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "Expand 2(x + 3). What is the constant term?",
+                answer: 6
+            },
+            {
+                question: "Expand 4(x + 2). What is the constant term?",
+                answer: 8
+            },
+            {
+                question: "Expand 5(x + 1). What is the constant term?",
+                answer: 5
+            },
+            {
+                question: "Expand 3(y + 4). What is the constant term?",
+                answer: 12
+            },
+            {
+                question: "Expand 6(a + 2). What is the constant term?",
+                answer: 12
+            }
+        ]
+    },
 
 
-  {
-    id: 7,
-    title: "Substitution in Algebra",
-    description: "Learn how to substitute values into algebraic expressions.",
+    {
+        id: 7,
+        title: "Substitution in Algebra",
+        description: "Learn how to substitute values into algebraic expressions.",
 
-    content: `
+        content: `
             <h3>What is Substitution?</h3>
 
             <p>
@@ -459,37 +459,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "Find 2x - 3 when x = 4.",
-        answer: 5
-      },
-      {
-        question: "Find 3x + 2 when x = 5.",
-        answer: 17
-      },
-      {
-        question: "Find 4y + 1 when y = 3.",
-        answer: 13
-      },
-      {
-        question: "Find 5a - 2 when a = 4.",
-        answer: 18
-      },
-      {
-        question: "Find 2b + 6 when b = 7.",
-        answer: 20
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "Find 2x - 3 when x = 4.",
+                answer: 5
+            },
+            {
+                question: "Find 3x + 2 when x = 5.",
+                answer: 17
+            },
+            {
+                question: "Find 4y + 1 when y = 3.",
+                answer: 13
+            },
+            {
+                question: "Find 5a - 2 when a = 4.",
+                answer: 18
+            },
+            {
+                question: "Find 2b + 6 when b = 7.",
+                answer: 20
+            }
+        ]
+    },
 
 
-  {
-    id: 8,
-    title: "Algebraic Fractions",
-    description: "Learn the basic idea of fractions containing variables.",
+    {
+        id: 8,
+        title: "Algebraic Fractions",
+        description: "Learn the basic idea of fractions containing variables.",
 
-    content: `
+        content: `
             <h3>Algebraic Fractions</h3>
 
             <p>
@@ -515,37 +515,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "If x = 10, what is x/2?",
-        answer: 5
-      },
-      {
-        question: "If x = 12, what is x/3?",
-        answer: 4
-      },
-      {
-        question: "If y = 20, what is y/4?",
-        answer: 5
-      },
-      {
-        question: "If a = 15, what is a/5?",
-        answer: 3
-      },
-      {
-        question: "If b = 18, what is b/6?",
-        answer: 3
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "If x = 10, what is x/2?",
+                answer: 5
+            },
+            {
+                question: "If x = 12, what is x/3?",
+                answer: 4
+            },
+            {
+                question: "If y = 20, what is y/4?",
+                answer: 5
+            },
+            {
+                question: "If a = 15, what is a/5?",
+                answer: 3
+            },
+            {
+                question: "If b = 18, what is b/6?",
+                answer: 3
+            }
+        ]
+    },
 
 
-  {
-    id: 9,
-    title: "Algebraic Equations",
-    description: "Understand equations and the meaning of equality.",
+    {
+        id: 9,
+        title: "Algebraic Equations",
+        description: "Understand equations and the meaning of equality.",
 
-    content: `
+        content: `
             <h3>What is an Equation?</h3>
 
             <p>
@@ -577,37 +577,37 @@ const algebraLessons = [
             </p>
         `,
 
-    practice: [
-      {
-        question: "Solve: x + 5 = 12.",
-        answer: 7
-      },
-      {
-        question: "Solve: x + 3 = 10.",
-        answer: 7
-      },
-      {
-        question: "Solve: x - 4 = 8.",
-        answer: 12
-      },
-      {
-        question: "Solve: x + 6 = 15.",
-        answer: 9
-      },
-      {
-        question: "Solve: x - 5 = 11.",
-        answer: 16
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "Solve: x + 5 = 12.",
+                answer: 7
+            },
+            {
+                question: "Solve: x + 3 = 10.",
+                answer: 7
+            },
+            {
+                question: "Solve: x - 4 = 8.",
+                answer: 12
+            },
+            {
+                question: "Solve: x + 6 = 15.",
+                answer: 9
+            },
+            {
+                question: "Solve: x - 5 = 11.",
+                answer: 16
+            }
+        ]
+    },
 
 
-  {
-    id: 10,
-    title: "Solving Simple Linear Equations",
-    description: "Learn how to solve basic equations involving one variable.",
+    {
+        id: 10,
+        title: "Solving Simple Linear Equations",
+        description: "Learn how to solve basic equations involving one variable.",
 
-    content: `
+        content: `
             <h3>Linear Equations</h3>
 
             <p>
@@ -643,31 +643,31 @@ const algebraLessons = [
             
         `,
 
-    practice: [
-      {
-        question: "Solve: 2x + 3 = 11.",
-        answer: 4
-      },
-      {
-        question: "Solve: 3x + 2 = 11.",
-        answer: 3
-      },
-      {
-        question: "Solve: 4x + 4 = 20.",
-        answer: 4
-      },
-      {
-        question: "Solve: 5x - 5 = 20.",
-        answer: 5
-      },
-      {
-        question: "Solve: 2x - 6 = 10.",
-        answer: 8
-      }
-    ]
-  },
+        practice: [
+            {
+                question: "Solve: 2x + 3 = 11.",
+                answer: 4
+            },
+            {
+                question: "Solve: 3x + 2 = 11.",
+                answer: 3
+            },
+            {
+                question: "Solve: 4x + 4 = 20.",
+                answer: 4
+            },
+            {
+                question: "Solve: 5x - 5 = 20.",
+                answer: 5
+            },
+            {
+                question: "Solve: 2x - 6 = 10.",
+                answer: 8
+            }
+        ]
+    },
 
-      {
+    {
         id: 11,
         title: "Collecting Like Terms",
         description: "Learn how to combine like terms to simplify expressions.",
@@ -1294,7 +1294,7 @@ const algebraLessons = [
         ]
     },
 
-        {
+    {
         id: 21,
         title: "Solving Linear Equations",
         description: "Learn the basic method for solving linear equations.",
@@ -2465,7 +2465,7 @@ const algebraLessons = [
         ]
     },
 
-        {
+    {
         id: 51,
         title: "Introduction to Quadratic Equations",
         description: "Learn what quadratic equations are and how they differ from linear equations.",
@@ -2832,7 +2832,7 @@ const algebraLessons = [
 
         practice: [
             { question: "What is the highest power in a quadratic equation?", answer: 2 },
-            { question: "What is the discriminant formula's first term?", answer:  b => 0 }
+            { question: "What is the discriminant formula's first term?", answer: b => 0 }
         ]
     },
 
