@@ -23,7 +23,7 @@
       <a href="#progress">Progress</a>
     </div>
 
-    <button class="menu-btn" id="menuBtn">☰</button>
+    <button class="menu-btn" id="menuBtn" type="button">☰</button>
   </nav>
 
   <!-- Hero -->
@@ -317,6 +317,83 @@
     </div>
   </section>
 
+  <section class="quiz-page" id="quiz">
+
+    <div class="section-heading">
+      <div>
+        <p class="small-title">QUIZ MODE</p>
+        <h2>Challenge Yourself 🏆</h2>
+        <p>Choose a subject and test what you have learned.</p>
+      </div>
+    </div>
+
+    <div class="quiz-panel" id="quizStart">
+      <h3>Choose a Subject</h3>
+      <p class="quiz-intro">You will answer 20 randomized questions.</p>
+
+      <div class="quiz-subjects">
+        <button class="quiz-subject-card" data-quiz-subject="algebra" type="button">
+          <span class="quiz-subject-icon">🔢</span>
+          <span>Algebra</span>
+          <small>20 questions</small>
+        </button>
+
+        <button class="quiz-subject-card" data-quiz-subject="geometry" type="button">
+          <span class="quiz-subject-icon">📐</span>
+          <span>Geometry</span>
+          <small>20 questions</small>
+        </button>
+      </div>
+    </div>
+
+    <div class="quiz-panel quiz-question-panel" id="quizGame" hidden>
+      <div class="quiz-top">
+        <button class="back-btn" id="backToQuizSubjects" type="button">← Choose Subject</button>
+        <span class="quiz-counter" id="quizProgress">Question 1 of 20</span>
+      </div>
+
+      <p class="small-title" id="quizSubjectLabel">ALGEBRA QUIZ</p>
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgressFill"></div>
+      </div>
+
+      <h3 id="quizQuestionText"></h3>
+      <div class="quiz-options" id="quizOptions"></div>
+      <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+
+      <div class="quiz-score-row">
+        <strong id="quizScoreText">Score: 0 / 20</strong>
+        <span id="quizAnsweredText">Answered: 0 / 20</span>
+      </div>
+
+      <div class="quiz-navigation">
+        <button class="previous-quiz-btn" id="quizPreviousQuestion" type="button" disabled>← Previous</button>
+        <button class="next-quiz-btn" id="quizNextQuestion" type="button" disabled>Next Question →</button>
+      </div>
+    </div>
+
+    <div class="quiz-panel quiz-result" id="quizResultPanel" hidden>
+      <div class="result-icon">🎉</div>
+      <p class="small-title">QUIZ COMPLETED</p>
+      <h3 id="quizResultTitle">Great work!</h3>
+      <div class="result-score" id="quizFinalScore">0 / 20</div>
+      <p id="quizFinalSummary">You answered 0 questions correctly.</p>
+
+      <div class="quiz-breakdown">
+        <div><strong id="quizCorrectCount">0</strong><span>Correct</span></div>
+        <div><strong id="quizWrongCount">0</strong><span>Wrong</span></div>
+        <div><strong id="quizPercentage">0%</strong><span>Score</span></div>
+      </div>
+
+      <div class="result-actions">
+        <button class="start-btn" id="quizRetry" type="button">Retry Quiz 🔄</button>
+        <button class="continue-btn" id="quizChooseAnother" type="button">Choose Another Subject</button>
+      </div>
+    </div>
+
+  </section>
+
+
   <!-- Progress -->
   <section class="progress-page" id="progress">
 
@@ -361,6 +438,7 @@
   <script src="Lessons/geometry.js"></script>
   <script src="script.js"></script>
   <script src="practice.js"></script>
+  <script src="quiz.js"></script>
 
 </body>
 
