@@ -174,6 +174,15 @@ quizNextQuestion.addEventListener("click", function () {
   if (quizResponses[quizIndex] === null) return;
 
   if (quizIndex === QUIZ_TOTAL - 1) {
+    const unansweredCount = QUIZ_TOTAL - getQuizAnsweredCount();
+
+    if (unansweredCount > 0) {
+      quizFeedback.textContent =
+        `You still have ${unansweredCount} unanswered question${unansweredCount === 1 ? "" : "s"}. Use Previous to complete them before seeing your result.`;
+      quizFeedback.className = "quiz-feedback incorrect-text";
+      return;
+    }
+
     finishQuiz();
     return;
   }
