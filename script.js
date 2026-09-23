@@ -91,6 +91,15 @@ const backToLessons =
 const backToSubject =
   document.getElementById("backToSubject");
 
+const previousLesson =
+  document.getElementById("previousLesson");
+
+const nextLesson =
+  document.getElementById("nextLesson");
+
+const lessonPosition =
+  document.getElementById("lessonPosition");
+
 
 // ===============================
 // CURRENT LESSON VARIABLES
