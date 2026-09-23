@@ -750,6 +750,7 @@ function showQuestion() {
 
 
 // Music section
+
 const backgroundMusic = document.getElementById("backgroundMusic");
 const musicToggle = document.getElementById("musicToggle");
 
@@ -764,45 +765,63 @@ const playlist = [
 let currentSong = 0;
 let musicStarted = false;
 
-backgroundMusic.volume = 0.5;
+backgroundMusic.volume = 0.15;
 
+
+// Play a song
+function playSong() {
+  backgroundMusic.src = playlist[currentSong];
+  backgroundMusic.load();
+
+  backgroundMusic.play()
+    .then(() => {
+      musicToggle.textContent = "🔊 Music";
+    })
+    .catch(error => {
+      console.log("Music could not start:", error);
+    });
+}
+
+
+// Start music after the student's first interaction
 function startMusic() {
   if (!musicStarted) {
     musicStarted = true;
-    backgroundMusic.src = playlist[currentSong];
-
-    backgroundMusic.play().catch(error => {
-      console.log("Music could not start:", error);
-    });
-
-    musicToggle.textContent = "🔊 Music";
+    playSong();
   }
 }
 
-// Start music when the student interacts anywhere on the site
+
+// Student interacts anywhere on the site
 document.addEventListener("click", startMusic, { once: true });
 document.addEventListener("keydown", startMusic, { once: true });
 document.addEventListener("touchstart", startMusic, { once: true });
 
-// When one song finishes, play the next one
+
+// When a song finishes, move to the next song
 backgroundMusic.addEventListener("ended", () => {
+
   currentSong++;
 
+  // After song 5, go back to song 1
   if (currentSong >= playlist.length) {
     currentSong = 0;
   }
 
-  backgroundMusic.src = playlist[currentSong];
-  backgroundMusic.play();
+  playSong();
 });
+
 
 // Music on/off button
 musicToggle.addEventListener("click", (event) => {
+
   event.stopPropagation();
 
   if (backgroundMusic.paused) {
-    backgroundMusic.play();
-    musicToggle.textContent = "🔊 Music";
+    backgroundMusic.play()
+      .then(() => {
+        musicToggle.textContent = "🔊 Music";
+      });
   } else {
     backgroundMusic.pause();
     musicToggle.textContent = "🔇 Music";
