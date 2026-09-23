@@ -342,6 +342,11 @@ function openLesson(subject, lesson) {
   lessonContent.innerHTML =
     lesson.content;
 
+  renderFormulaCard(
+    subject,
+    lesson.title
+  );
+
 
   // Clear result
 
@@ -379,6 +384,83 @@ function openLesson(subject, lesson) {
 }
 
 
+
+// ===============================
+// VISUAL FORMULA CARD
+// ===============================
+
+function getFormulaForLesson(subject, title) {
+
+  if (subject !== "calculus") {
+    return null;
+  }
+
+  const formulas = {
+    "Limits": ["lim x→a f(x)", "The value f(x) approaches as x approaches a."],
+    "Evaluating Limits": ["lim x→a f(x)", "Evaluate the expression as x approaches a."],
+    "One-Sided Limits": ["lim x→a⁻ f(x)  |  lim x→a⁺ f(x)", "Approach the point from the left or right."],
+    "Continuity": ["f(a) = lim x→a f(x)", "A function is continuous at a when its value equals its limit."],
+    "Average Rate of Change": ["[f(b) − f(a)] / (b − a)", "Change in output divided by change in input."],
+    "The Derivative": ["f'(x) = lim h→0 [f(x+h) − f(x)] / h", "The derivative measures instantaneous rate of change."],
+    "Derivative Notation": ["f'(x) = dy/dx", "Common notation for the derivative."],
+    "Power Rule": ["d/dx(xⁿ) = nxⁿ⁻¹", "Multiply by the exponent and reduce the exponent by 1."],
+    "Product Rule": ["(uv)' = u'v + uv'", "Use when two functions are multiplied."],
+    "Quotient Rule": ["(u/v)' = (u'v − uv') / v²", "Use when one function is divided by another."],
+    "Chain Rule": ["d/dx[f(g(x))] = f'(g(x))g'(x)", "Use for composite functions."],
+    "Second Derivative": ["f''(x) = d/dx[f'(x)]", "The derivative of the first derivative."],
+    "Related Rates": ["dy/dt = (dy/dx)(dx/dt)", "Connect rates of changing quantities."],
+    "Linear Approximation": ["L(x) = f(a) + f'(a)(x − a)", "Approximate a function near a known point."],
+    "Critical Points": ["f'(x) = 0  or  f'(x) undefined", "Critical points are candidates for extrema."],
+    "First Derivative Test": ["f': + → −  ⇒  local maximum", "A positive-to-negative sign change indicates a local maximum."],
+    "Concavity": ["f''(x) > 0 ⇒ concave up", "Positive second derivative indicates concave up."],
+    "Inflection Points": ["f''(x) = 0  (candidate)", "A true inflection point requires a change in concavity."],
+    "Optimization": ["Maximum / Minimum", "Use critical points and endpoints to find extreme values."],
+    "Velocity and Acceleration": ["v(t)=s'(t),   a(t)=s''(t)", "Velocity is the derivative of position; acceleration is the derivative of velocity."],
+    "Antiderivatives": ["F'(x) = f(x)", "An antiderivative differentiates back to the original function."],
+    "Indefinite Integrals": ["∫ f(x) dx = F(x) + C", "The constant C represents the family of antiderivatives."],
+    "Definite Integrals": ["∫ₐᵇ f(x) dx = F(b) − F(a)", "Evaluate an antiderivative at the upper and lower bounds."],
+    "Fundamental Theorem of Calculus": ["d/dx ∫ₐˣ f(t)dt = f(x)", "Differentiation and integration are closely connected."],
+    "Substitution Method": ["u = g(x)", "Substitution simplifies an integral by replacing an inner expression."],
+    "Integration by Parts": ["∫u dv = uv − ∫v du", "Useful when an integrand is a product of functions."],
+    "Area Between Curves": ["A = ∫ [top − bottom] dx", "Integrate the vertical difference between two curves."],
+    "Volumes by Disks": ["V = π∫ R² dx", "Add the areas of circular cross-sections."],
+    "Volumes by Washers": ["V = π∫(R² − r²) dx", "Subtract the inner disk from the outer disk."],
+    "Volumes by Cylindrical Shells": ["V = 2π∫(radius)(height) dx", "Add the volume of thin cylindrical shells."],
+    "Arc Length": ["L = ∫ √(1 + [f'(x)]²) dx", "Measure distance along a curve."],
+    "Parametric Derivatives": ["dy/dx = (dy/dt)/(dx/dt)", "Differentiate x and y with respect to the parameter."],
+    "Polar Area": ["A = ½∫ r² dθ", "Find area in polar coordinates."],
+    "Arithmetic Sequences": ["aₙ = a₁ + (n−1)d", "The nth term of an arithmetic sequence."],
+    "Geometric Sequences": ["aₙ = a₁rⁿ⁻¹", "The nth term of a geometric sequence."],
+    "Infinite Geometric Series": ["S = a₁/(1−r),  |r|<1", "The infinite geometric series converges when |r| is less than 1."],
+    "Taylor Series": ["Σ [f⁽ⁿ⁾(a)/n!] (x−a)ⁿ", "Represent a function as a power series around a."],
+    "Maclaurin Series": ["Σ [f⁽ⁿ⁾(0)/n!] xⁿ", "A Taylor series centered at zero."],
+    "Differential Equations Introduction": ["dy/dx = f(x,y)", "An equation involving an unknown function and its derivatives."],
+    "Growth and Decay Models": ["P(t) = P₀eᵏᵗ", "The sign of k determines basic exponential growth or decay."]
+  };
+
+  return formulas[title] || [
+    "Identify the definition or rule",
+    "Check the conditions, substitute carefully, and simplify."
+  ];
+}
+
+function renderFormulaCard(subject, title) {
+
+  const formula = getFormulaForLesson(subject, title);
+
+  if (!formula) return;
+
+  const card = document.createElement("div");
+  card.className = "formula-card";
+
+  card.innerHTML = `
+    <div class="formula-label">KEY FORMULA / IDEA</div>
+    <div class="formula-expression">${formula[0]}</div>
+    <p>${formula[1]}</p>
+  `;
+
+  lessonContent.appendChild(card);
+}
 
 // ===============================
 // LESSON NAVIGATION
