@@ -347,6 +347,11 @@ function openLesson(subject, lesson) {
     lesson.title
   );
 
+  renderVisualAid(
+    subject,
+    lesson.title
+  );
+
 
   // Clear result
 
@@ -442,6 +447,140 @@ function getFormulaForLesson(subject, title) {
     "Identify the definition or rule",
     "Check the conditions, substitute carefully, and simplify."
   ];
+}
+
+// ===============================
+// VISUAL MATH DIAGRAMS
+// ===============================
+
+function getVisualType(title) {
+  const derivativeTopics = [
+    "The Derivative","Derivative Notation","Power Rule","Product Rule",
+    "Quotient Rule","Chain Rule","Second Derivative","Related Rates",
+    "Critical Points","First Derivative Test","Local Maximum and Minimum",
+    "Concavity","Inflection Points","Optimization","Velocity and Acceleration"
+  ];
+
+  const integralTopics = [
+    "Antiderivatives","Indefinite Integrals","Definite Integrals",
+    "Riemann Sums","Area Under a Curve","Area Between Curves",
+    "Average Value of a Function","Substitution Method","Integration by Substitution",
+    "Integration by Parts","Volumes by Disks","Volumes by Washers",
+    "Volumes by Cylindrical Shells","Arc Length","Trapezoidal Rule",
+    "Midpoint Rule","Simpson's Rule"
+  ];
+
+  const seriesTopics = [
+    "Sequences","Series","Arithmetic Sequences","Geometric Sequences",
+    "Infinite Geometric Series","Power Series","Taylor Series",
+    "Maclaurin Series","Taylor Polynomial","Applications of Taylor Series"
+  ];
+
+  if (derivativeTopics.includes(title)) return "derivative";
+  if (integralTopics.includes(title)) return "integral";
+  if (seriesTopics.includes(title)) return "series";
+  if (title === "Polar Coordinates" || title === "Polar Area") return "polar";
+  if (title === "Volumes by Disks" || title === "Volumes by Washers") return "circle";
+  return null;
+}
+
+function renderVisualAid(subject, title) {
+
+  if (subject !== "calculus") return;
+
+  const type = getVisualType(title);
+  if (!type) return;
+
+  const card = document.createElement("div");
+  card.className = "visual-math-card";
+
+  let visual = "";
+  let caption = "";
+
+  if (type === "derivative") {
+    visual = `
+      <svg class="math-diagram" viewBox="0 0 520 250" role="img" aria-label="Curve with tangent line">
+        <line x1="55" y1="210" x2="490" y2="210" class="axis"/>
+        <line x1="80" y1="225" x2="80" y2="25" class="axis"/>
+        <path d="M80 185 C150 175 165 120 225 125 S315 95 370 70 S445 45 480 35" class="curve"/>
+        <line x1="120" y1="195" x2="440" y2="55" class="tangent"/>
+        <circle cx="280" cy="125" r="6" class="point"/>
+        <text x="292" y="118">point of tangency</text>
+        <text x="470" y="230">x</text>
+        <text x="60" y="38">y</text>
+      </svg>`;
+    caption = "The derivative gives the slope of the tangent line at a point.";
+  }
+
+  if (type === "integral") {
+    visual = `
+      <svg class="math-diagram" viewBox="0 0 520 250" role="img" aria-label="Area under a curve">
+        <line x1="55" y1="210" x2="490" y2="210" class="axis"/>
+        <line x1="70" y1="225" x2="70" y2="25" class="axis"/>
+        <path d="M70 185 C140 165 175 145 225 120 S330 75 470 45 L470 210 L70 210 Z" class="area"/>
+        <path d="M70 185 C140 165 175 145 225 120 S330 75 470 45" class="curve"/>
+        <line x1="120" y1="210" x2="120" y2="170" class="slice"/>
+        <line x1="170" y1="210" x2="170" y2="150" class="slice"/>
+        <line x1="220" y1="210" x2="220" y2="122" class="slice"/>
+        <line x1="270" y1="210" x2="270" y2="103" class="slice"/>
+        <line x1="320" y1="210" x2="320" y2="80" class="slice"/>
+        <line x1="370" y1="210" x2="370" y2="68" class="slice"/>
+        <text x="255" y="235">accumulated area</text>
+      </svg>`;
+    caption = "A definite integral can represent accumulated change or signed area.";
+  }
+
+  if (type === "series") {
+    visual = `
+      <svg class="math-diagram" viewBox="0 0 520 250" role="img" aria-label="Converging series terms">
+        <line x1="55" y1="210" x2="490" y2="210" class="axis"/>
+        <circle cx="90" cy="90" r="22" class="series-dot"/>
+        <circle cx="155" cy="125" r="16" class="series-dot"/>
+        <circle cx="210" cy="150" r="11" class="series-dot"/>
+        <circle cx="255" cy="170" r="8" class="series-dot"/>
+        <circle cx="292" cy="183" r="6" class="series-dot"/>
+        <circle cx="322" cy="191" r="4" class="series-dot"/>
+        <text x="345" y="195">terms approach a limit</text>
+      </svg>`;
+    caption = "In a convergent series, partial sums approach a finite value.";
+  }
+
+  if (type === "polar") {
+    visual = `
+      <svg class="math-diagram" viewBox="0 0 520 250" role="img" aria-label="Polar coordinate diagram">
+        <line x1="65" y1="135" x2="485" y2="135" class="axis"/>
+        <line x1="275" y1="230" x2="275" y2="30" class="axis"/>
+        <circle cx="275" cy="135" r="78" class="polar-grid"/>
+        <line x1="275" y1="135" x2="345" y2="92" class="radius"/>
+        <circle cx="345" cy="92" r="6" class="point"/>
+        <path d="M315 135 A40 40 0 0 0 310 113" class="angle"/>
+        <text x="350" y="88">r</text>
+        <text x="315" y="116">θ</text>
+        <text x="280" y="50">y</text>
+        <text x="475" y="130">x</text>
+      </svg>`;
+    caption = "A polar point is described by its distance r from the origin and angle θ.";
+  }
+
+  if (type === "circle") {
+    visual = `
+      <svg class="math-diagram" viewBox="0 0 520 250" role="img" aria-label="Circular cross section">
+        <circle cx="255" cy="125" r="78" class="circle-shape"/>
+        <line x1="255" y1="125" x2="333" y2="125" class="radius"/>
+        <circle cx="255" cy="125" r="5" class="point"/>
+        <text x="285" y="116">R</text>
+        <text x="185" y="225">circular cross-section</text>
+      </svg>`;
+    caption = "Disk and washer methods build volume from circular cross-sections.";
+  }
+
+  card.innerHTML = `
+    <div class="visual-math-label">VISUAL EXPLANATION</div>
+    ${visual}
+    <p class="visual-math-caption">${caption}</p>
+  `;
+
+  lessonContent.appendChild(card);
 }
 
 function renderFormulaCard(subject, title) {
