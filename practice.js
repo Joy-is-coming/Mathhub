@@ -95,7 +95,6 @@ const practiceQuestionBank = {
     { question: "Which rule is commonly used for a quotient of functions?", options: ["Sum rule", "Quotient rule", "Power rule", "Constant rule"], answer: 1, explanation: "The quotient rule differentiates a quotient." },
     { question: "What is an antiderivative?", options: ["A function whose derivative is the given function", "A maximum value", "A limit", "A graph"], answer: 0, explanation: "An antiderivative differentiates to the original function." },
     { question: "What is the Fundamental Theorem of Calculus mainly about?", options: ["The connection between differentiation and integration", "Only geometry", "Only probability", "Only statistics"], answer: 0, explanation: "It connects differentiation and integration." }
-  ],
   ]
 };
 
