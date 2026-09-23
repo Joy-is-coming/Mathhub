@@ -100,6 +100,23 @@ const nextLesson =
 const lessonPosition =
   document.getElementById("lessonPosition");
 
+// ===============================
+// PROGRESS DASHBOARD ELEMENTS
+// ===============================
+
+const dashboardCompletedLessons = document.getElementById("dashboardCompletedLessons");
+const dashboardOverallPercentage = document.getElementById("dashboardOverallPercentage");
+const dashboardQuizCount = document.getElementById("dashboardQuizCount");
+const dashboardQuizAverage = document.getElementById("dashboardQuizAverage");
+const quizHistoryList = document.getElementById("quizHistoryList");
+const continueLessonTitle = document.getElementById("continueLessonTitle");
+const continueLessonDescription = document.getElementById("continueLessonDescription");
+const dashboardContinueBtn = document.getElementById("dashboardContinueBtn");
+const homeContinueSubject = document.getElementById("homeContinueSubject");
+const homeContinuePercentage = document.getElementById("homeContinuePercentage");
+const homeContinueFill = document.getElementById("homeContinueFill");
+const homeContinueBtn = document.getElementById("homeContinueBtn");
+
 
 // ===============================
 // CURRENT LESSON VARIABLES
@@ -1108,216 +1125,226 @@ backToSubject.addEventListener(
 
 
 // ===============================
-// UPDATE PROGRESS
+// UPDATE PROGRESS DASHBOARD
 // ===============================
 
-function updateProgress() {
+function getQuizScores() {
+  const savedScores = localStorage.getItem("mathHubQuizScores");
 
-  const progressText =
-    document.getElementById(
-      "progressText"
-    );
+  if (!savedScores) return [];
 
+  try {
+    const parsed = JSON.parse(savedScores);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    return [];
+  }
+}
 
-  const overallProgressFill =
-    document.getElementById(
-      "overallProgressFill"
-    );
+function saveQuizScore(subject, score, total) {
+  const scores = getQuizScores();
 
+  scores.unshift({
+    subject,
+    score,
+    total,
+    percentage: Math.round((score / total) * 100),
+    date: new Date().toISOString()
+  });
 
-  const overallPercentage =
-    document.getElementById(
-      "overallPercentage"
-    );
-
-
-  const lessonProgressList =
-    document.getElementById(
-      "lessonProgressList"
-    );
-
-
-  // ===============================
-  // CALCULATE TOTAL LESSONS
-  // ===============================
-
-  let totalLessons =
-    0;
-
-  let totalCompleted =
-    0;
-
-
-  Object.keys(subjects).forEach(
-    function (subject) {
-
-      totalLessons +=
-        subjects[subject].length;
-
-
-      subjects[subject].forEach(
-        function (lesson) {
-
-          const uniqueLessonId =
-            getLessonId(
-              subject,
-              lesson.id
-            );
-
-
-          if (
-            completedLessons.includes(
-              uniqueLessonId
-            )
-          ) {
-
-            totalCompleted++;
-
-          }
-
-        }
-      );
-
-    }
+  localStorage.setItem(
+    "mathHubQuizScores",
+    JSON.stringify(scores.slice(0, 10))
   );
+}
 
+function getSubjectProgress(subject) {
+  const lessons = subjects[subject] || [];
 
-  // ===============================
-  // CALCULATE PERCENTAGE
-  // ===============================
+  const completed = lessons.filter(function (lesson) {
+    return completedLessons.includes(getLessonId(subject, lesson.id));
+  }).length;
 
   const percentage =
-    totalLessons === 0
-      ? 0
-      : (totalCompleted / totalLessons) * 100;
+    lessons.length === 0 ? 0 : (completed / lessons.length) * 100;
 
+  return { total: lessons.length, completed, percentage };
+}
 
-  // ===============================
-  // UPDATE OVERALL PROGRESS
-  // ===============================
+function getNextIncompleteLesson() {
+  for (const subject of Object.keys(subjects)) {
+    const lesson = subjects[subject].find(function (item) {
+      return !completedLessons.includes(getLessonId(subject, item.id));
+    });
+
+    if (lesson) return { subject, lesson };
+  }
+
+  return null;
+}
+
+function renderQuizHistory() {
+  if (!quizHistoryList) return;
+
+  const scores = getQuizScores();
+
+  if (scores.length === 0) {
+    quizHistoryList.innerHTML =
+      '<p class="dashboard-empty">No quiz attempts yet. Complete a quiz to see your scores here.</p>';
+    return;
+  }
+
+  quizHistoryList.innerHTML = scores.slice(0, 5).map(function (attempt) {
+    const date = new Date(attempt.date);
+    const dateText = Number.isNaN(date.getTime())
+      ? "Recent attempt"
+      : date.toLocaleDateString();
+
+    const subjectName =
+      attempt.subject.charAt(0).toUpperCase() + attempt.subject.slice(1);
+
+    return `
+      <div class="quiz-history-item">
+        <div>
+          <strong>${subjectName} Quiz</strong>
+          <span>${dateText}</span>
+        </div>
+        <div class="quiz-history-score">
+          <strong>${attempt.score}/${attempt.total}</strong>
+          <span>${attempt.percentage}%</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function updateContinueLearning() {
+  const next = getNextIncompleteLesson();
+
+  if (!next) {
+    continueLessonTitle.textContent = "All lessons completed! 🎉";
+    continueLessonDescription.textContent =
+      "You have completed every lesson currently available in MathHub.";
+
+    dashboardContinueBtn.textContent = "Review Lessons →";
+    dashboardContinueBtn.onclick = function () {
+      lessonsSection.scrollIntoView({ behavior: "smooth" });
+    };
+
+    homeContinueSubject.textContent = "All Subjects";
+    homeContinuePercentage.textContent = "100%";
+    homeContinueFill.style.width = "100%";
+    homeContinueBtn.textContent = "Review Lessons →";
+    homeContinueBtn.onclick = function () {
+      lessonsSection.scrollIntoView({ behavior: "smooth" });
+    };
+    return;
+  }
+
+  const progress = getSubjectProgress(next.subject);
+  const formattedName =
+    next.subject.charAt(0).toUpperCase() + next.subject.slice(1);
+
+  continueLessonTitle.textContent =
+    `${formattedName}: Lesson ${next.lesson.id} — ${next.lesson.title}`;
+
+  continueLessonDescription.textContent = next.lesson.description;
+
+  dashboardContinueBtn.textContent = "Continue Lesson →";
+  dashboardContinueBtn.onclick = function () {
+    openLesson(next.subject, next.lesson);
+  };
+
+  homeContinueSubject.textContent =
+    `${formattedName} — Continue Learning`;
+  homeContinuePercentage.textContent =
+    `${progress.percentage.toFixed(0)}%`;
+  homeContinueFill.style.width = `${progress.percentage}%`;
+  homeContinueBtn.textContent = "Continue Lesson →";
+  homeContinueBtn.onclick = function () {
+    openLesson(next.subject, next.lesson);
+  };
+}
+
+function updateProgress() {
+  let totalLessons = 0;
+  let totalCompleted = 0;
+
+  Object.keys(subjects).forEach(function (subject) {
+    const progress = getSubjectProgress(subject);
+    totalLessons += progress.total;
+    totalCompleted += progress.completed;
+  });
+
+  const percentage =
+    totalLessons === 0 ? 0 : (totalCompleted / totalLessons) * 100;
+
+  const progressText = document.getElementById("progressText");
+  const overallProgressFill = document.getElementById("overallProgressFill");
+  const overallPercentage = document.getElementById("overallPercentage");
+  const lessonProgressList = document.getElementById("lessonProgressList");
 
   progressText.textContent =
     `${totalCompleted} of ${totalLessons} lessons completed`;
 
+  overallProgressFill.style.width = `${percentage}%`;
+  overallPercentage.textContent = `${percentage.toFixed(1)}%`;
 
-  overallProgressFill.style.width =
-    `${percentage}%`;
+  dashboardCompletedLessons.textContent = totalCompleted;
+  dashboardOverallPercentage.textContent = `${percentage.toFixed(1)}%`;
 
+  const quizScores = getQuizScores();
+  dashboardQuizCount.textContent = quizScores.length;
 
-  overallPercentage.textContent =
-    `${percentage.toFixed(1)}%`;
+  const quizAverage = quizScores.length === 0
+    ? 0
+    : quizScores.reduce(function (sum, item) {
+        return sum + Number(item.percentage || 0);
+      }, 0) / quizScores.length;
 
+  dashboardQuizAverage.textContent = `${quizAverage.toFixed(0)}%`;
 
-  // ===============================
-  // CLEAR OLD PROGRESS
-  // ===============================
+  lessonProgressList.innerHTML = "";
 
-  lessonProgressList.innerHTML =
-    "";
+  Object.keys(subjects).forEach(function (subject) {
+    const progress = getSubjectProgress(subject);
+    const formattedName =
+      subject.charAt(0).toUpperCase() + subject.slice(1);
 
+    const card = document.createElement("div");
+    card.className = "subject-progress-card";
 
-  // ===============================
-  // DISPLAY SUBJECT PROGRESS
-  // ===============================
+    card.innerHTML = `
+      <div class="subject-progress-top">
+        <div>
+          <h3>${formattedName}</h3>
+          <p>${progress.completed} of ${progress.total} lessons completed</p>
+        </div>
+        <strong>${progress.percentage.toFixed(0)}%</strong>
+      </div>
 
-  Object.keys(subjects).forEach(
-    function (subject) {
+      <div class="subject-progress-bar">
+        <div class="subject-progress-fill" style="width: ${progress.percentage}%"></div>
+      </div>
 
-      const formattedName =
-        subject.charAt(0).toUpperCase() +
-        subject.slice(1);
+      <button type="button" class="subject-progress-btn">
+        Open ${formattedName} →
+      </button>
+    `;
 
+    card.querySelector(".subject-progress-btn").addEventListener(
+      "click",
+      function () {
+        openSubject(subject);
+      }
+    );
 
-      // Subject heading
+    lessonProgressList.appendChild(card);
+  });
 
-      const subjectHeading =
-        document.createElement(
-          "h3"
-        );
-
-
-      subjectHeading.textContent =
-        formattedName;
-
-
-      lessonProgressList.appendChild(
-        subjectHeading
-      );
-
-
-      // Lessons
-
-      subjects[subject].forEach(
-        function (lesson) {
-
-          const lessonItem =
-            document.createElement(
-              "div"
-            );
-
-
-          lessonItem.classList.add(
-            "lesson-progress-item"
-          );
-
-
-          const uniqueLessonId =
-            getLessonId(
-              subject,
-              lesson.id
-            );
-
-
-          const isCompleted =
-            completedLessons.includes(
-              uniqueLessonId
-            );
-
-
-          lessonItem.innerHTML = `
-
-                        <div class="lesson-progress-icon">
-
-                            ${isCompleted
-              ? "✅"
-              : "🔒"
-            }
-
-                        </div>
-
-
-                        <div class="lesson-progress-info">
-
-                            <h4>
-                                ${lesson.title}
-                            </h4>
-
-                            <p>
-
-                                ${isCompleted
-              ? "Completed"
-              : "Not completed"
-            }
-
-                            </p>
-
-                        </div>
-
-                    `;
-
-
-          lessonProgressList.appendChild(
-            lessonItem
-          );
-
-        }
-      );
-
-    }
-  );
-
+  renderQuizHistory();
+  updateContinueLearning();
 }
-
 
 // ===============================
 // INITIALIZE
