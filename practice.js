@@ -49,6 +49,8 @@ const practiceQuestionBank = {
     { question: "What is the sum of the exterior angles of any polygon?", options: ["180°", "270°", "360°", "540°"], answer: 2, explanation: "One exterior angle at each vertex makes a full turn of 360°." },
     { question: "In a parallelogram, opposite angles are...", options: ["always equal", "always 90°", "always 45°", "always supplementary"], answer: 0, explanation: "Opposite angles in a parallelogram are equal." }
 
+  ],
+
   statistics: [
     { question: "Find the mean of 2, 4, 6.", options: ["3", "4", "5", "6"], answer: 1, explanation: "Mean = (2 + 4 + 6) / 3 = 4." },
     { question: "What is the median of 3, 5, 7?", options: ["3", "5", "7", "15"], answer: 1, explanation: "The middle value is 5." },
