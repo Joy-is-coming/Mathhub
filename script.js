@@ -353,6 +353,9 @@ function openLesson(subject, lesson) {
     "none";
 
 
+  // Show lesson position and navigation
+  updateLessonNavigation();
+
   // Show first question
 
   showQuestion();
@@ -366,6 +369,94 @@ function openLesson(subject, lesson) {
 
 }
 
+
+
+// ===============================
+// LESSON NAVIGATION
+// ===============================
+
+function updateLessonNavigation() {
+
+  if (!currentSubject || !currentLesson) return;
+
+  const subjectLessonsList =
+    subjects[currentSubject];
+
+  const lessonIndex =
+    subjectLessonsList.findIndex(
+      function (lesson) {
+        return lesson.id === currentLesson.id;
+      }
+    );
+
+  const total =
+    subjectLessonsList.length;
+
+  lessonPosition.textContent =
+    `Lesson ${lessonIndex + 1} of ${total}`;
+
+  previousLesson.disabled =
+    lessonIndex === 0;
+
+  nextLesson.disabled =
+    lessonIndex === total - 1;
+}
+
+previousLesson.addEventListener(
+  "click",
+  function () {
+
+    if (!currentSubject || !currentLesson) return;
+
+    const subjectLessonsList =
+      subjects[currentSubject];
+
+    const lessonIndex =
+      subjectLessonsList.findIndex(
+        function (lesson) {
+          return lesson.id === currentLesson.id;
+        }
+      );
+
+    if (lessonIndex > 0) {
+
+      openLesson(
+        currentSubject,
+        subjectLessonsList[lessonIndex - 1]
+      );
+
+    }
+
+  }
+);
+
+nextLesson.addEventListener(
+  "click",
+  function () {
+
+    if (!currentSubject || !currentLesson) return;
+
+    const subjectLessonsList =
+      subjects[currentSubject];
+
+    const lessonIndex =
+      subjectLessonsList.findIndex(
+        function (lesson) {
+          return lesson.id === currentLesson.id;
+        }
+      );
+
+    if (lessonIndex < subjectLessonsList.length - 1) {
+
+      openLesson(
+        currentSubject,
+        subjectLessonsList[lessonIndex + 1]
+      );
+
+    }
+
+  }
+);
 
 // ===============================
 // SHOW QUESTION
