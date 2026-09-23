@@ -47,7 +47,7 @@ const practiceQuestionBank = {
     { question: "Find the volume of a cube with side 4 cm.", options: ["16 cm³", "32 cm³", "64 cm³", "128 cm³"], answer: 2, explanation: "Volume = side³ = 4³ = 64 cm³." },
     { question: "A rectangle has sides 3 cm and 4 cm. What is its diagonal?", options: ["5 cm", "6 cm", "7 cm", "12 cm"], answer: 0, explanation: "The diagonal is √(3² + 4²) = 5 cm." },
     { question: "What is the sum of the exterior angles of any polygon?", options: ["180°", "270°", "360°", "540°"], answer: 2, explanation: "One exterior angle at each vertex makes a full turn of 360°." },
-    { question: "In a parallelogram, opposite angles are...", options: ["always equal", "always 90°", "always 45°", "always supplementary"], answer: 0, explanation: "Opposite angles in a parallelogram are equal." }
+    { question: "In a parallelogram, opposite angles are...", options: ["always equal", "always 90°", "always 45°", "always supplementary"], answer: 0, explanation: "Opposite angles in a parallelogram are equal." },
   ]
 };
 

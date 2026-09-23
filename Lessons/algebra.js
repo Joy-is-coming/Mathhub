@@ -10,14 +10,16 @@ const algebraLessons = [
 
             <p>
                 Algebra is a branch of mathematics that uses letters,
-                numbers and symbols to represent quantities and relationships.
+                numbers and symbols to represent quantities and relationships.<br>
+                
             </p>
+            
 
             <h3>Variables</h3>
 
             <p>
                 A variable is a letter or symbol used to represent an unknown
-                value. For example, in <strong>x + 5 = 10</strong>, x is a variable.
+                value. <br> For example, in <strong>x + 5 = 10</strong>, x is a variable.
             </p>
 
             <h3>Example</h3>
@@ -48,6 +50,11 @@ const algebraLessons = [
                 question: "If a = 6, what is a × 2?",
                 answer: 12
             },
+            {
+                question: "If b = 20, what is b ÷ 4?",
+                answer: 5
+            },
+
             {
                 question: "If b = 20, what is b ÷ 4?",
                 answer: 5
@@ -182,6 +189,7 @@ const algebraLessons = [
                 question: "Simplify: 12b - 5b. What is the coefficient of b?",
                 answer: 7
             }
+
         ]
     },
 
