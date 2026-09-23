@@ -1352,3 +1352,51 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===============================
+   LESSON NAVIGATION
+   =============================== */
+
+.lesson-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.lesson-navigation button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.lesson-navigation button:hover {
+  opacity: 0.9;
+}
+
+.lesson-navigation button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+#lessonPosition {
+  font-weight: 600;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .lesson-navigation {
+    flex-direction: column;
+  }
+
+  .lesson-navigation button {
+    width: 100%;
+  }
+}
