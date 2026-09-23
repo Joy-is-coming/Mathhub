@@ -105,9 +105,9 @@
         <div>
           <h3>Calculus</h3>
           <p>Limits, differentiation and integration.</p>
-          <span>Coming Soon</span>
+          <span>100 Lessons</span>
         </div>
-        <button class="lesson-btn" type="button" disabled>Coming Soon</button>
+        <button class="lesson-btn" id="calculusBtn">Start →</button>
       </div>
 
     </div>
@@ -212,6 +212,12 @@
         <button class="practice-subject-card" data-practice-subject="statistics" type="button">
           <span class="practice-subject-icon">📊</span>
           <span>Statistics</span>
+          <small>20-question bank</small>
+        </button>
+
+        <button class="practice-subject-card" data-practice-subject="calculus" type="button">
+          <span class="practice-subject-icon">📈</span>
+          <span>Calculus</span>
           <small>20-question bank</small>
         </button>
       </div>
@@ -355,6 +361,13 @@
           <span>Statistics</span>
           <small>20 questions</small>
         </button>
+
+        <button class="quiz-subject-card" data-quiz-subject="calculus" type="button">
+          <span class="quiz-subject-icon">📈</span>
+          <span>Calculus</span>
+          <small>20 questions</small>
+        </button>
+
       </div>
     </div>
 
@@ -425,7 +438,7 @@
       <div class="progress-header">
         <div>
           <h3>Learning Progress</h3>
-          <p id="progressText">0 of 200 lessons completed</p>
+          <p id="progressText">0 of 300 lessons completed</p>
         </div>
 
         <strong id="overallPercentage">0%</strong>
@@ -449,6 +462,7 @@
   <script src="Lessons/algebra.js"></script>
   <script src="Lessons/geometry.js"></script>
   <script src="Lessons/statistics.js"></script>
+  <script src="Lessons/calculus.js"></script>
   <script src="script.js"></script>
   <script src="practice.js"></script>
   <script src="Lessons/quiz.js"></script>

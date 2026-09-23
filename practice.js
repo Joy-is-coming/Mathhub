@@ -72,6 +72,29 @@ const practiceQuestionBank = {
     { question: "What does a histogram mainly display?", options: ["Continuous or grouped numerical data", "Only names", "Only equations", "Geometric angles"], answer: 0, explanation: "Histograms display frequencies for numerical class intervals." },
     { question: "What is the possible range of Pearson correlation r?", options: ["0 to 100", "-1 to 1", "-10 to 10", "1 to 10"], answer: 1, explanation: "Pearson's r ranges from -1 to +1." },
     { question: "If a regression line predicts 12 and the observed value is 15, what is the residual?", options: ["-3", "0", "3", "27"], answer: 2, explanation: "Residual = observed - predicted = 15 - 12 = 3." }
+  ],
+
+  calculus: [
+    { question: "What is the derivative of x²?", options: ["x", "2x", "x²", "2"], answer: 1, explanation: "By the power rule, d/dx(x²) = 2x." },
+    { question: "What is the derivative of x³?", options: ["3x²", "x²", "3x", "x⁴"], answer: 0, explanation: "By the power rule, d/dx(x³) = 3x²." },
+    { question: "What is the derivative of a constant?", options: ["1", "The constant", "0", "x"], answer: 2, explanation: "The derivative of a constant is 0." },
+    { question: "What is the limit of x + 4 as x approaches 3?", options: ["3", "4", "7", "12"], answer: 2, explanation: "Substitute x = 3: 3 + 4 = 7." },
+    { question: "What is the derivative of 5x?", options: ["5", "x", "5x", "0"], answer: 0, explanation: "d/dx(5x) = 5." },
+    { question: "What is the integral of 2x?", options: ["2x² + C", "x² + C", "2 + C", "x + C"], answer: 1, explanation: "∫2x dx = x² + C." },
+    { question: "What does a derivative measure?", options: ["Area only", "Instantaneous rate of change", "Probability", "Distance only"], answer: 1, explanation: "A derivative measures instantaneous rate of change." },
+    { question: "What is the derivative of x⁴?", options: ["4x³", "x³", "4x", "x⁵"], answer: 0, explanation: "The power rule gives 4x³." },
+    { question: "What is the integral of 1 dx?", options: ["1", "x + C", "0", "x² + C"], answer: 1, explanation: "The antiderivative of 1 is x + C." },
+    { question: "What is the derivative of sin(x)?", options: ["cos(x)", "-cos(x)", "sin(x)", "tan(x)"], answer: 0, explanation: "d/dx[sin(x)] = cos(x)." },
+    { question: "What is the derivative of cos(x)?", options: ["sin(x)", "-sin(x)", "cos(x)", "tan(x)"], answer: 1, explanation: "d/dx[cos(x)] = -sin(x)." },
+    { question: "What is the main purpose of the chain rule?", options: ["Differentiate composite functions", "Find area only", "Solve probability", "Find medians"], answer: 0, explanation: "The chain rule differentiates composite functions." },
+    { question: "If f'(x) > 0 on an interval, f is generally...", options: ["decreasing", "constant", "increasing", "undefined"], answer: 2, explanation: "A positive derivative indicates an increasing function on the interval." },
+    { question: "A point where f'(x) = 0 may be called a...", options: ["critical point", "sample", "limit", "coefficient"], answer: 0, explanation: "A point where the derivative is zero is a critical point if it lies in the domain." },
+    { question: "What does a definite integral commonly represent?", options: ["A signed accumulation", "A derivative", "A median", "A slope only"], answer: 0, explanation: "A definite integral can represent signed area or accumulated change." },
+    { question: "What is the constant of integration?", options: ["C", "x", "0", "π"], answer: 0, explanation: "Indefinite integrals include an arbitrary constant C." },
+    { question: "Which rule differentiates a product of two functions?", options: ["Product rule", "Power rule", "Quotient rule", "Chain rule only"], answer: 0, explanation: "The product rule is used for products." },
+    { question: "Which rule is commonly used for a quotient of functions?", options: ["Sum rule", "Quotient rule", "Power rule", "Constant rule"], answer: 1, explanation: "The quotient rule differentiates a quotient." },
+    { question: "What is an antiderivative?", options: ["A function whose derivative is the given function", "A maximum value", "A limit", "A graph"], answer: 0, explanation: "An antiderivative differentiates to the original function." },
+    { question: "What is the Fundamental Theorem of Calculus mainly about?", options: ["The connection between differentiation and integration", "Only geometry", "Only probability", "Only statistics"], answer: 0, explanation: "It connects differentiation and integration." }
   ]
 };
 

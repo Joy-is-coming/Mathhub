@@ -159,7 +159,9 @@ const subjects = {
 
   geometry: geometryLessons,
 
-  statistics: statisticsLessons
+  statistics: statisticsLessons,
+
+  calculus: calculusLessons
 
 };
 
@@ -691,6 +693,24 @@ statisticsBtn.addEventListener(
   function () {
     openSubject(
       "statistics"
+    );
+  }
+);
+
+// ===============================
+// OPEN CALCULUS
+// ===============================
+
+const calculusBtn =
+  document.getElementById(
+    "calculusBtn"
+  );
+
+calculusBtn.addEventListener(
+  "click",
+  function () {
+    openSubject(
+      "calculus"
     );
   }
 );
