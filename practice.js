@@ -47,7 +47,31 @@ const practiceQuestionBank = {
     { question: "Find the volume of a cube with side 4 cm.", options: ["16 cm³", "32 cm³", "64 cm³", "128 cm³"], answer: 2, explanation: "Volume = side³ = 4³ = 64 cm³." },
     { question: "A rectangle has sides 3 cm and 4 cm. What is its diagonal?", options: ["5 cm", "6 cm", "7 cm", "12 cm"], answer: 0, explanation: "The diagonal is √(3² + 4²) = 5 cm." },
     { question: "What is the sum of the exterior angles of any polygon?", options: ["180°", "270°", "360°", "540°"], answer: 2, explanation: "One exterior angle at each vertex makes a full turn of 360°." },
-    { question: "In a parallelogram, opposite angles are...", options: ["always equal", "always 90°", "always 45°", "always supplementary"], answer: 0, explanation: "Opposite angles in a parallelogram are equal." },
+    { question: "In a parallelogram, opposite angles are...", options: ["always equal", "always 90°", "always 45°", "always supplementary"], answer: 0, explanation: "Opposite angles in a parallelogram are equal." }
+
+  ],
+
+  statistics: [
+    { question: "Find the mean of 2, 4, 6.", options: ["3", "4", "5", "6"], answer: 1, explanation: "Mean = (2 + 4 + 6) / 3 = 4." },
+    { question: "What is the median of 3, 5, 7?", options: ["3", "5", "7", "15"], answer: 1, explanation: "The middle value is 5." },
+    { question: "What is the mode of 2, 3, 3, 4?", options: ["2", "3", "4", "12"], answer: 1, explanation: "3 occurs most often." },
+    { question: "Find the range of 4, 9, 12, 15.", options: ["9", "11", "15", "19"], answer: 1, explanation: "Range = 15 - 4 = 11." },
+    { question: "A fair die has 6 outcomes. What is P(rolling a 3)?", options: ["1/2", "1/3", "1/6", "3/6"], answer: 2, explanation: "One favorable outcome out of six gives 1/6." },
+    { question: "What is the probability of an impossible event?", options: ["0", "1/4", "1/2", "1"], answer: 0, explanation: "An impossible event has probability 0." },
+    { question: "What is the probability of a certain event?", options: ["0", "1/4", "1/2", "1"], answer: 3, explanation: "A certain event has probability 1." },
+    { question: "If Q1 = 4 and Q3 = 10, find the IQR.", options: ["4", "6", "10", "14"], answer: 1, explanation: "IQR = Q3 - Q1 = 10 - 4 = 6." },
+    { question: "A sample has 20 observations. How many observations are in 10% of it?", options: ["1", "2", "5", "10"], answer: 1, explanation: "10% of 20 = 2." },
+    { question: "If the mean is 10 and there are 5 observations, what is their total?", options: ["15", "20", "50", "100"], answer: 2, explanation: "Total = mean × number of observations = 10 × 5 = 50." },
+    { question: "If a value occurs 8 times, what is its frequency?", options: ["4", "8", "16", "80"], answer: 1, explanation: "Frequency is the number of occurrences, so it is 8." },
+    { question: "What is the midpoint of the interval 10-20?", options: ["10", "15", "20", "30"], answer: 1, explanation: "Midpoint = (10 + 20) / 2 = 15." },
+    { question: "If P(A) = 0.3, what is P(not A)?", options: ["0.3", "0.5", "0.7", "1.3"], answer: 2, explanation: "P(not A) = 1 - 0.3 = 0.7." },
+    { question: "What is 25% of 40?", options: ["5", "10", "15", "20"], answer: 1, explanation: "25% of 40 = 10." },
+    { question: "What is the mean of 5 and 9?", options: ["5", "7", "9", "14"], answer: 1, explanation: "Mean = (5 + 9) / 2 = 7." },
+    { question: "If the maximum is 18 and minimum is 7, what is the range?", options: ["9", "10", "11", "25"], answer: 2, explanation: "Range = 18 - 7 = 11." },
+    { question: "How many outcomes are possible when tossing one fair coin?", options: ["1", "2", "3", "4"], answer: 1, explanation: "The outcomes are heads and tails, so there are 2." },
+    { question: "What does a histogram mainly display?", options: ["Continuous or grouped numerical data", "Only names", "Only equations", "Geometric angles"], answer: 0, explanation: "Histograms display frequencies for numerical class intervals." },
+    { question: "What is the possible range of Pearson correlation r?", options: ["0 to 100", "-1 to 1", "-10 to 10", "1 to 10"], answer: 1, explanation: "Pearson's r ranges from -1 to +1." },
+    { question: "If a regression line predicts 12 and the observed value is 15, what is the residual?", options: ["-3", "0", "3", "27"], answer: 2, explanation: "Residual = observed - predicted = 15 - 12 = 3." }
   ]
 };
 

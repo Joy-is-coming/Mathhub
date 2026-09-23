@@ -157,7 +157,9 @@ const subjects = {
 
   algebra: algebraLessons,
 
-  geometry: geometryLessons
+  geometry: geometryLessons,
+
+  statistics: statisticsLessons
 
 };
 
@@ -671,6 +673,25 @@ geometryBtn.addEventListener(
       "geometry"
     );
 
+  }
+);
+
+
+// ===============================
+// OPEN STATISTICS
+// ===============================
+
+const statisticsBtn =
+  document.getElementById(
+    "statisticsBtn"
+  );
+
+statisticsBtn.addEventListener(
+  "click",
+  function () {
+    openSubject(
+      "statistics"
+    );
   }
 );
 
