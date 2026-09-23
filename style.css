@@ -1453,3 +1453,110 @@ footer {
     padding: 12px;
   }
 }
+
+
+/* ===============================
+   VISUAL MATH DIAGRAMS
+   =============================== */
+
+.visual-math-card {
+  margin: 28px 0;
+  padding: 22px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.visual-math-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+.math-diagram {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.math-diagram .axis {
+  stroke: #374151;
+  stroke-width: 2;
+}
+
+.math-diagram .curve {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 4;
+}
+
+.math-diagram .tangent {
+  stroke: #dc2626;
+  stroke-width: 3;
+  stroke-dasharray: 8 6;
+}
+
+.math-diagram .point {
+  fill: #dc2626;
+}
+
+.math-diagram .area {
+  fill: #dbeafe;
+  stroke: none;
+}
+
+.math-diagram .slice {
+  stroke: #93c5fd;
+  stroke-width: 2;
+}
+
+.math-diagram .series-dot {
+  fill: #2563eb;
+}
+
+.math-diagram .polar-grid {
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+  stroke-dasharray: 5 5;
+}
+
+.math-diagram .radius {
+  stroke: #dc2626;
+  stroke-width: 3;
+}
+
+.math-diagram .angle {
+  fill: none;
+  stroke: #16a34a;
+  stroke-width: 3;
+}
+
+.math-diagram .circle-shape {
+  fill: #dbeafe;
+  stroke: #2563eb;
+  stroke-width: 4;
+}
+
+.visual-math-caption {
+  margin: 12px auto 0;
+  max-width: 620px;
+  text-align: center;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .visual-math-card {
+    padding: 14px;
+  }
+
+  .math-diagram {
+    min-width: 0;
+  }
+}
