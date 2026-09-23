@@ -472,25 +472,25 @@ function getFormulaForLesson(subject, title) {
 
 function getVisualType(title) {
   const derivativeTopics = [
-    "The Derivative","Derivative Notation","Power Rule","Product Rule",
-    "Quotient Rule","Chain Rule","Second Derivative","Related Rates",
-    "Critical Points","First Derivative Test","Local Maximum and Minimum",
-    "Concavity","Inflection Points","Optimization","Velocity and Acceleration"
+    "The Derivative", "Derivative Notation", "Power Rule", "Product Rule",
+    "Quotient Rule", "Chain Rule", "Second Derivative", "Related Rates",
+    "Critical Points", "First Derivative Test", "Local Maximum and Minimum",
+    "Concavity", "Inflection Points", "Optimization", "Velocity and Acceleration"
   ];
 
   const integralTopics = [
-    "Antiderivatives","Indefinite Integrals","Definite Integrals",
-    "Riemann Sums","Area Under a Curve","Area Between Curves",
-    "Average Value of a Function","Substitution Method","Integration by Substitution",
-    "Integration by Parts","Volumes by Disks","Volumes by Washers",
-    "Volumes by Cylindrical Shells","Arc Length","Trapezoidal Rule",
-    "Midpoint Rule","Simpson's Rule"
+    "Antiderivatives", "Indefinite Integrals", "Definite Integrals",
+    "Riemann Sums", "Area Under a Curve", "Area Between Curves",
+    "Average Value of a Function", "Substitution Method", "Integration by Substitution",
+    "Integration by Parts", "Volumes by Disks", "Volumes by Washers",
+    "Volumes by Cylindrical Shells", "Arc Length", "Trapezoidal Rule",
+    "Midpoint Rule", "Simpson's Rule"
   ];
 
   const seriesTopics = [
-    "Sequences","Series","Arithmetic Sequences","Geometric Sequences",
-    "Infinite Geometric Series","Power Series","Taylor Series",
-    "Maclaurin Series","Taylor Polynomial","Applications of Taylor Series"
+    "Sequences", "Series", "Arithmetic Sequences", "Geometric Sequences",
+    "Infinite Geometric Series", "Power Series", "Taylor Series",
+    "Maclaurin Series", "Taylor Polynomial", "Applications of Taylor Series"
   ];
 
   if (derivativeTopics.includes(title)) return "derivative";
@@ -749,6 +749,65 @@ function showQuestion() {
 }
 
 
+// Music section
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+const playlist = [
+  "audio/hitslab-education-presentation-tutorial-music-333729.mp3",
+  "audio/india_happy-education-loop-education-music-494844.mp3",
+  "audio/monume-educational-presentation-tutorial-music-576952.mp3",
+  "audio/nastelbom-education-324535.mp3",
+  "audio/paulyudin-education-education-music-573997 (1).mp3"
+];
+
+let currentSong = 0;
+let musicStarted = false;
+
+backgroundMusic.volume = 0.5;
+
+function startMusic() {
+  if (!musicStarted) {
+    musicStarted = true;
+    backgroundMusic.src = playlist[currentSong];
+
+    backgroundMusic.play().catch(error => {
+      console.log("Music could not start:", error);
+    });
+
+    musicToggle.textContent = "🔊 Music";
+  }
+}
+
+// Start music when the student interacts anywhere on the site
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("keydown", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
+
+// When one song finishes, play the next one
+backgroundMusic.addEventListener("ended", () => {
+  currentSong++;
+
+  if (currentSong >= playlist.length) {
+    currentSong = 0;
+  }
+
+  backgroundMusic.src = playlist[currentSong];
+  backgroundMusic.play();
+});
+
+// Music on/off button
+musicToggle.addEventListener("click", (event) => {
+  event.stopPropagation();
+
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    musicToggle.textContent = "🔊 Music";
+  } else {
+    backgroundMusic.pause();
+    musicToggle.textContent = "🔇 Music";
+  }
+});
 // ===============================
 // CHECK ANSWER
 // ===============================
@@ -1299,8 +1358,8 @@ function updateProgress() {
   const quizAverage = quizScores.length === 0
     ? 0
     : quizScores.reduce(function (sum, item) {
-        return sum + Number(item.percentage || 0);
-      }, 0) / quizScores.length;
+      return sum + Number(item.percentage || 0);
+    }, 0) / quizScores.length;
 
   dashboardQuizAverage.textContent = `${quizAverage.toFixed(0)}%`;
 

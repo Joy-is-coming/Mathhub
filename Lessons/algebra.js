@@ -58,6 +58,387 @@ const algebraLessons = [
             {
                 question: "If b = 20, what is b ÷ 4?",
                 answer: 5
+            },
+
+            {
+                question: "If x = 5, what is x + 3?",
+                answer: 8
+            },
+            {
+                question: "If x = 7, what is x - 2?",
+                answer: 5
+            },
+            {
+                question: "If x = 4, what is 2x?",
+                answer: 8
+            },
+            {
+                question: "If x = 6, what is x + 9?",
+                answer: 15
+            },
+            {
+                question: "If x = 10, what is x - 4?",
+                answer: 6
+            },
+            {
+                question: "If x = 3, what is 3x?",
+                answer: 9
+            },
+            {
+                question: "If x = 8, what is x + 7?",
+                answer: 15
+            },
+            {
+                question: "If x = 9, what is x - 5?",
+                answer: 4
+            },
+            {
+                question: "If x = 5, what is 4x?",
+                answer: 20
+            },
+            {
+                question: "If x = 12, what is x + 6?",
+                answer: 18
+            },
+            {
+                question: "If x = 15, what is x - 7?",
+                answer: 8
+            },
+            {
+                question: "If x = 4, what is 5x?",
+                answer: 20
+            },
+            {
+                question: "If x = 6, what is x + 8?",
+                answer: 14
+            },
+            {
+                question: "If x = 11, what is x - 3?",
+                answer: 8
+            },
+            {
+                question: "If x = 7, what is 2x + 1?",
+                answer: 15
+            },
+            {
+                question: "If x = 5, what is 3x + 2?",
+                answer: 17
+            },
+            {
+                question: "If x = 8, what is 2x - 3?",
+                answer: 13
+            },
+            {
+                question: "If x = 10, what is 3x - 5?",
+                answer: 25
+            },
+            {
+                question: "If x = 3, what is 4x + 1?",
+                answer: 13
+            },
+            {
+                question: "If x = 9, what is 2x + 4?",
+                answer: 22
+            },
+            {
+                question: "If x = 6, what is 3x - 4?",
+                answer: 14
+            },
+            {
+                question: "If x = 7, what is 4x - 2?",
+                answer: 26
+            },
+            {
+                question: "If x = 5, what is 2x + 6?",
+                answer: 16
+            },
+            {
+                question: "If x = 12, what is 2x - 7?",
+                answer: 17
+            },
+            {
+                question: "If x = 4, what is x + 12?",
+                answer: 16
+            },
+            {
+                question: "If x = 9, what is x - 6?",
+                answer: 3
+            },
+            {
+                question: "If x = 7, what is 3x?",
+                answer: 21
+            },
+            {
+                question: "If x = 11, what is 2x?",
+                answer: 22
+            },
+            {
+                question: "If x = 5, what is x + 14?",
+                answer: 19
+            },
+            {
+                question: "If x = 13, what is x - 8?",
+                answer: 5
+            },
+            {
+                question: "If x = 6, what is 4x + 2?",
+                answer: 26
+            },
+            {
+                question: "If x = 8, what is 3x - 1?",
+                answer: 23
+            },
+            {
+                question: "If x = 10, what is 2x + 5?",
+                answer: 25
+            },
+            {
+                question: "If x = 4, what is 5x - 3?",
+                answer: 17
+            },
+            {
+                question: "If x = 9, what is 2x + 7?",
+                answer: 25
+            },
+            {
+                question: "If x = 6, what is 5x - 4?",
+                answer: 26
+            },
+            {
+                question: "If x = 3, what is 6x + 2?",
+                answer: 20
+            },
+            {
+                question: "If x = 7, what is 3x + 5?",
+                answer: 26
+            },
+            {
+                question: "If x = 12, what is 2x + 3?",
+                answer: 27
+            },
+            {
+                question: "If x = 5, what is 4x - 6?",
+                answer: 14
+            },
+            {
+                question: "If x = 8, what is 5x + 1?",
+                answer: 41
+            },
+            {
+                question: "If x = 10, what is 4x - 7?",
+                answer: 33
+            },
+            {
+                question: "If x = 4, what is 3x + 8?",
+                answer: 20
+            },
+            {
+                question: "If x = 9, what is 5x - 2?",
+                answer: 43
+            },
+            {
+                question: "If x = 6, what is 2(x + 4)?",
+                answer: 20
+            },
+            {
+                question: "If x = 7, what is 3(x - 2)?",
+                answer: 15
+            },
+            {
+                question: "If x = 5, what is 4(x + 3) - 2?",
+                answer: 30
+            },
+            {
+                question: "If x = 8, what is 2(x - 3) + 5?",
+                answer: 15
+            },
+            {
+                question: "If x = 9, what is 3(x + 2) - 4?",
+                answer: 29
+            },
+            {
+                question: "If x = 4, what is 5(x - 1) + 3?",
+                answer: 18
+            },
+            {
+                question: "If x = 6, what is 4(x + 2) - 5?",
+                answer: 27
+            },
+            {
+                question: "If x = 10, what is 2(x - 4) + 7?",
+                answer: 19
+            },
+            {
+                question: "If x = 7, what is 5(x + 1) - 6?",
+                answer: 34
+            },
+            {
+                question: "If x = 12, what is 3(x - 5) + 2?",
+                answer: 23
+            },
+
+            {
+                question: "If x = 8, what is (x + 4) / 2?",
+                answer: 6
+            },
+            {
+                question: "If x = 10, what is (x - 4) / 2?",
+                answer: 3
+            },
+            {
+                question: "If x = 12, what is (2x + 6) / 3?",
+                answer: 10
+            },
+            {
+                question: "If x = 9, what is (3x - 6) / 3?",
+                answer: 7
+            },
+            {
+                question: "If x = 15, what is (x + 5) / 4?",
+                answer: 5
+            },
+            {
+                question: "If x = 14, what is (2x - 4) / 2?",
+                answer: 12
+            },
+            {
+                question: "If x = 18, what is (x - 6) / 3?",
+                answer: 4
+            },
+            {
+                question: "If x = 16, what is (3x + 8) / 4?",
+                answer: 14
+            },
+            {
+                question: "If x = 20, what is (2x - 10) / 5?",
+                answer: 6
+            },
+            {
+                question: "If x = 11, what is (4x + 4) / 4?",
+                answer: 12
+            },
+
+            {
+                question: "If x = 5, what is x² + 3?",
+                answer: 28
+            },
+            {
+                question: "If x = 6, what is x² - 4?",
+                answer: 32
+            },
+            {
+                question: "If x = 7, what is 2x²?",
+                answer: 98
+            },
+            {
+                question: "If x = 4, what is x² + 2x?",
+                answer: 24
+            },
+            {
+                question: "If x = 8, what is x² - 3x?",
+                answer: 40
+            },
+            {
+                question: "If x = 5, what is 3x² - 4?",
+                answer: 71
+            },
+            {
+                question: "If x = 9, what is x² + 2x - 5?",
+                answer: 94
+            },
+            {
+                question: "If x = 6, what is 2x² + 3x?",
+                answer: 90
+            },
+            {
+                question: "If x = 10, what is x² - 2x + 1?",
+                answer: 81
+            },
+            {
+                question: "If x = 4, what is 3x² + 2x - 5?",
+                answer: 51
+            },
+
+            {
+                question: "If x = -3, what is x + 8?",
+                answer: 5
+            },
+            {
+                question: "If x = -5, what is x - 4?",
+                answer: -9
+            },
+            {
+                question: "If x = -6, what is 2x + 5?",
+                answer: -7
+            },
+            {
+                question: "If x = -4, what is 3x - 2?",
+                answer: -14
+            },
+            {
+                question: "If x = -7, what is 2(x + 5)?",
+                answer: -4
+            },
+            {
+                question: "If x = -3, what is 4(x - 2)?",
+                answer: -20
+            },
+            {
+                question: "If x = -5, what is x² + 2?",
+                answer: 27
+            },
+            {
+                question: "If x = -4, what is x² - 3x?",
+                answer: 28
+            },
+            {
+                question: "If x = -6, what is 2x² - 4?",
+                answer: 68
+            },
+            {
+                question: "If x = -2, what is 3x² + 5x?",
+                answer: 2
+            },
+
+            {
+                question: "If x = 3 and y = 5, what is x + y?",
+                answer: 8
+            },
+            {
+                question: "If x = 4 and y = 7, what is 2x + y?",
+                answer: 15
+            },
+            {
+                question: "If x = 6 and y = 3, what is 3x - y?",
+                answer: 15
+            },
+            {
+                question: "If x = 5 and y = 2, what is xy + 4?",
+                answer: 14
+            },
+            {
+                question: "If x = 8 and y = 3, what is x² - y?",
+                answer: 61
+            },
+            {
+                question: "If x = 4 and y = 6, what is 2(x + y)?",
+                answer: 20
+            },
+            {
+                question: "If x = 7 and y = 2, what is x² + y²?",
+                answer: 53
+            },
+            {
+                question: "If x = 9 and y = 4, what is 2x - 3y?",
+                answer: 6
+            },
+            {
+                question: "If x = 5 and y = 3, what is 3x + 2y - 4?",
+                answer: 17
+            },
+            {
+                question: "If x = 6 and y = 4, what is (x + y)²?",
+                answer: 100
             }
         ]
     },
@@ -126,6 +507,387 @@ const algebraLessons = [
             {
                 question: "If b = 6, what is 2b - 4?",
                 answer: 8
+            },
+
+            {
+                question: "If x = 3, what is x + 5?",
+                answer: 8
+            },
+            {
+                question: "If x = 7, what is x - 2?",
+                answer: 5
+            },
+            {
+                question: "If x = 4, what is 2x?",
+                answer: 8
+            },
+            {
+                question: "If x = 6, what is x + 9?",
+                answer: 15
+            },
+            {
+                question: "If x = 10, what is x - 3?",
+                answer: 7
+            },
+            {
+                question: "If x = 5, what is 3x?",
+                answer: 15
+            },
+            {
+                question: "If x = 8, what is x + 4?",
+                answer: 12
+            },
+            {
+                question: "If x = 9, what is x - 6?",
+                answer: 3
+            },
+            {
+                question: "If x = 2, what is 4x?",
+                answer: 8
+            },
+            {
+                question: "If x = 11, what is x + 7?",
+                answer: 18
+            },
+            {
+                question: "If x = 12, what is x - 5?",
+                answer: 7
+            },
+            {
+                question: "If x = 3, what is 5x?",
+                answer: 15
+            },
+            {
+                question: "If x = 7, what is x + 8?",
+                answer: 15
+            },
+            {
+                question: "If x = 15, what is x - 9?",
+                answer: 6
+            },
+            {
+                question: "If x = 6, what is 4x?",
+                answer: 24
+            },
+            {
+                question: "If x = 9, what is x + 11?",
+                answer: 20
+            },
+            {
+                question: "If x = 13, what is x - 4?",
+                answer: 9
+            },
+            {
+                question: "If x = 5, what is 6x?",
+                answer: 30
+            },
+            {
+                question: "If x = 8, what is x + 13?",
+                answer: 21
+            },
+            {
+                question: "If x = 14, what is x - 7?",
+                answer: 7
+            },
+            {
+                question: "If x = 4, what is 2x + 3?",
+                answer: 11
+            },
+            {
+                question: "If x = 5, what is 3x + 2?",
+                answer: 17
+            },
+            {
+                question: "If x = 6, what is 4x - 5?",
+                answer: 19
+            },
+            {
+                question: "If x = 7, what is 2x + 8?",
+                answer: 22
+            },
+            {
+                question: "If x = 8, what is 5x - 3?",
+                answer: 37
+            },
+            {
+                question: "If x = 9, what is 3x + 4?",
+                answer: 31
+            },
+            {
+                question: "If x = 10, what is 2x - 7?",
+                answer: 13
+            },
+            {
+                question: "If x = 3, what is 6x + 1?",
+                answer: 19
+            },
+            {
+                question: "If x = 11, what is 4x - 6?",
+                answer: 38
+            },
+            {
+                question: "If x = 12, what is 3x + 5?",
+                answer: 41
+            },
+            {
+                question: "If x = 5, what is 7x - 4?",
+                answer: 31
+            },
+            {
+                question: "If x = 6, what is 5x + 7?",
+                answer: 37
+            },
+            {
+                question: "If x = 8, what is 4x - 9?",
+                answer: 23
+            },
+            {
+                question: "If x = 7, what is 6x + 2?",
+                answer: 44
+            },
+            {
+                question: "If x = 9, what is 5x - 8?",
+                answer: 37
+            },
+            {
+                question: "If x = 4, what is 8x + 3?",
+                answer: 35
+            },
+            {
+                question: "If x = 10, what is 7x - 5?",
+                answer: 65
+            },
+            {
+                question: "If x = 12, what is 2x + 11?",
+                answer: 35
+            },
+            {
+                question: "If x = 15, what is 3x - 7?",
+                answer: 38
+            },
+            {
+                question: "If x = 13, what is 4x + 6?",
+                answer: 58
+            },
+            {
+                question: "If x = 3, what is 2(x + 4)?",
+                answer: 14
+            },
+            {
+                question: "If x = 5, what is 3(x - 2)?",
+                answer: 9
+            },
+            {
+                question: "If x = 6, what is 2(x + 5) - 3?",
+                answer: 19
+            },
+            {
+                question: "If x = 7, what is 3(x - 1) + 4?",
+                answer: 22
+            },
+            {
+                question: "If x = 8, what is 4(x + 2)?",
+                answer: 40
+            },
+            {
+                question: "If x = 9, what is 2(x - 3) + 5?",
+                answer: 17
+            },
+            {
+                question: "If x = 4, what is 5(x + 1) - 2?",
+                answer: 23
+            },
+            {
+                question: "If x = 10, what is 3(x - 4) + 6?",
+                answer: 24
+            },
+            {
+                question: "If x = 6, what is 4(x + 3) - 5?",
+                answer: 31
+            },
+            {
+                question: "If x = 7, what is 5(x - 2) + 3?",
+                answer: 28
+            },
+            {
+                question: "If x = 5, what is 2(x + 6) + 4?",
+                answer: 26
+            },
+            {
+                question: "If x = 8, what is 3(x - 2) + 7?",
+                answer: 25
+            },
+            {
+                question: "If x = 9, what is 4(x + 1) - 6?",
+                answer: 34
+            },
+            {
+                question: "If x = 11, what is 2(x - 5) + 9?",
+                answer: 21
+            },
+            {
+                question: "If x = 12, what is 3(x + 2) - 7?",
+                answer: 35
+            },
+            {
+                question: "If x = 6, what is 5(x - 1) + 8?",
+                answer: 33
+            },
+            {
+                question: "If x = 10, what is 2(x + 4) - 9?",
+                answer: 19
+            },
+            {
+                question: "If x = 7, what is 4(x - 2) + 11?",
+                answer: 31
+            },
+            {
+                question: "If x = 9, what is 5(x + 2) - 4?",
+                answer: 51
+            },
+            {
+                question: "If x = 13, what is 2(x - 4) + 7?",
+                answer: 25
+            },
+            {
+                question: "If x = -3, what is x + 8?",
+                answer: 5
+            },
+            {
+                question: "If x = -5, what is x - 4?",
+                answer: -9
+            },
+            {
+                question: "If x = -4, what is 2x + 7?",
+                answer: -1
+            },
+            {
+                question: "If x = -6, what is 3x - 2?",
+                answer: -20
+            },
+            {
+                question: "If x = -2, what is 4x + 9?",
+                answer: 1
+            },
+            {
+                question: "If x = -7, what is 2(x + 3)?",
+                answer: -8
+            },
+            {
+                question: "If x = -5, what is 3(x - 2)?",
+                answer: -21
+            },
+            {
+                question: "If x = -4, what is 5x + 6?",
+                answer: -14
+            },
+            {
+                question: "If x = -3, what is 2(x - 5) + 4?",
+                answer: -12
+            },
+            {
+                question: "If x = -6, what is 3(x + 4) - 2?",
+                answer: -8
+            },
+            {
+                question: "If x = 12, what is (x + 4) / 2?",
+                answer: 8
+            },
+            {
+                question: "If x = 15, what is (x - 3) / 4?",
+                answer: 3
+            },
+            {
+                question: "If x = 18, what is (2x + 6) / 3?",
+                answer: 14
+            },
+            {
+                question: "If x = 20, what is (x + 4) / 6?",
+                answer: 4
+            },
+            {
+                question: "If x = 14, what is (3x - 6) / 6?",
+                answer: 6
+            },
+            {
+                question: "If x = 3, what is x²?",
+                answer: 9
+            },
+            {
+                question: "If x = 5, what is x² + 2?",
+                answer: 27
+            },
+            {
+                question: "If x = 6, what is x² - 5?",
+                answer: 31
+            },
+            {
+                question: "If x = 4, what is 2x²?",
+                answer: 32
+            },
+            {
+                question: "If x = 7, what is x² + x?",
+                answer: 56
+            },
+            {
+                question: "If x = 8, what is x² - 3x?",
+                answer: 40
+            },
+            {
+                question: "If x = 5, what is 3x² - 4?",
+                answer: 71
+            },
+            {
+                question: "If x = 6, what is 2x² + 3?",
+                answer: 75
+            },
+            {
+                question: "If x = 9, what is x² - 2x?",
+                answer: 63
+            },
+            {
+                question: "If x = 10, what is x² + 3x - 5?",
+                answer: 125
+            },
+            {
+                question: "If x = 4 and y = 3, what is x + y?",
+                answer: 7
+            },
+            {
+                question: "If x = 5 and y = 2, what is 2x + y?",
+                answer: 12
+            },
+            {
+                question: "If x = 6 and y = 4, what is 3x - y?",
+                answer: 14
+            },
+            {
+                question: "If x = 7 and y = 3, what is xy + 2?",
+                answer: 23
+            },
+            {
+                question: "If x = 8 and y = 2, what is x² + y?",
+                answer: 66
+            },
+            {
+                question: "If x = 5 and y = 4, what is 2(x + y) - 3?",
+                answer: 15
+            },
+            {
+                question: "If x = 6 and y = 3, what is x² - 2y?",
+                answer: 30
+            },
+            {
+                question: "If x = 7 and y = 2, what is 3x + 4y?",
+                answer: 29
+            },
+            {
+                question: "If x = 4 and y = 5, what is (x + y)²?",
+                answer: 81
+            },
+            {
+                question: "If x = 6 and y = 4, what is 2x² - y?",
+                answer: 68
             }
         ]
     },
@@ -188,7 +950,388 @@ const algebraLessons = [
             {
                 question: "Simplify: 12b - 5b. What is the coefficient of b?",
                 answer: 7
-            }
+            },
+            {
+                question: "Are 3x and 5x like terms? Answer yes or no.",
+                answer: "yes"
+            },
+            {
+                question: "Are 4y and 7y like terms? Answer yes or no.",
+                answer: "yes"
+            },
+            {
+                question: "Are 3x and 4y like terms? Answer yes or no.",
+                answer: "no"
+            },
+            {
+                question: "Are 6a and 2a like terms? Answer yes or no.",
+                answer: "yes"
+            },
+            {
+                question: "Are 5x and 5x² like terms? Answer yes or no.",
+                answer: "no"
+            },
+            {
+                question: "Are 7m and 3n like terms? Answer yes or no.",
+                answer: "no"
+            },
+            {
+                question: "What is the coefficient of x in 8x?",
+                answer: 8
+            },
+            {
+                question: "What is the coefficient of y in 12y?",
+                answer: 12
+            },
+            {
+                question: "What is the coefficient of a in 5a?",
+                answer: 5
+            },
+            {
+                question: "What is the coefficient of m in 9m?",
+                answer: 9
+            },
+            {
+                question: "Simplify: 3x + 5x.",
+                answer: "8x"
+            },
+            {
+                question: "Simplify: 4y + 6y.",
+                answer: "10y"
+            },
+            {
+                question: "Simplify: 7a + 2a.",
+                answer: "9a"
+            },
+            {
+                question: "Simplify: 5m + 3m.",
+                answer: "8m"
+            },
+            {
+                question: "Simplify: 9p + 4p.",
+                answer: "13p"
+            },
+            {
+                question: "Simplify: 8x - 3x.",
+                answer: "5x"
+            },
+            {
+                question: "Simplify: 10y - 4y.",
+                answer: "6y"
+            },
+            {
+                question: "Simplify: 12a - 5a.",
+                answer: "7a"
+            },
+            {
+                question: "Simplify: 15m - 6m.",
+                answer: "9m"
+            },
+            {
+                question: "Simplify: 11p - 3p.",
+                answer: "8p"
+            },
+            {
+                question: "What is the coefficient of x in 14x?",
+                answer: 14
+            },
+            {
+                question: "What is the coefficient of y in -7y?",
+                answer: -7
+            },
+            {
+                question: "What is the coefficient of a in -9a?",
+                answer: -9
+            },
+            {
+                question: "Simplify: 6x + 4x + 2x.",
+                answer: "12x"
+            },
+            {
+                question: "Simplify: 3y + 5y + 7y.",
+                answer: "15y"
+            },
+            {
+                question: "Simplify: 2a + 6a + 4a.",
+                answer: "12a"
+            },
+            {
+                question: "Simplify: 9m - 3m + 2m.",
+                answer: "8m"
+            },
+            {
+                question: "Simplify: 10p - 4p - 2p.",
+                answer: "4p"
+            },
+            {
+                question: "Simplify: 7x + 3x - 5x.",
+                answer: "5x"
+            },
+            {
+                question: "Simplify: 12y - 5y + 2y.",
+                answer: "9y"
+            },
+            {
+                question: "Simplify: 8a + 6a - 4a.",
+                answer: "10a"
+            },
+            {
+                question: "Simplify: 15m - 7m + 3m.",
+                answer: "11m"
+            },
+            {
+                question: "Simplify: 20p - 8p - 4p.",
+                answer: "8p"
+            },
+            {
+                question: "Simplify: 4x + 3y + 5x.",
+                answer: "9x + 3y"
+            },
+            {
+                question: "Simplify: 6a + 2b + 4a.",
+                answer: "10a + 2b"
+            },
+            {
+                question: "Simplify: 7m + 5n - 2m.",
+                answer: "5m + 5n"
+            },
+            {
+                question: "Simplify: 9x + 4y - 3x.",
+                answer: "6x + 4y"
+            },
+            {
+                question: "Simplify: 8a - 3b + 5a.",
+                answer: "13a - 3b"
+            },
+            {
+                question: "Simplify: 12p + 4q - 7p.",
+                answer: "5p + 4q"
+            },
+            {
+                question: "Simplify: 10x + 3y - 4x + 2y.",
+                answer: "6x + 5y"
+            },
+            {
+                question: "Simplify: 7a + 5b + 3a - 2b.",
+                answer: "10a + 3b"
+            },
+            {
+                question: "Simplify: 9m - 4n + 2m + 6n.",
+                answer: "11m + 2n"
+            },
+            {
+                question: "Simplify: 15x + 2y - 5x - y.",
+                answer: "10x + y"
+            },
+            {
+                question: "Simplify: 8a - 3b + 4a + 5b.",
+                answer: "12a + 2b"
+            },
+            {
+                question: "Simplify: 6x + 4y - 2x + 3y.",
+                answer: "4x + 7y"
+            },
+            {
+                question: "Simplify: 11m + 3n - 6m - n.",
+                answer: "5m + 2n"
+            },
+            {
+                question: "Simplify: 14p - 5q + 3p + 2q.",
+                answer: "17p - 3q"
+            },
+            {
+                question: "Simplify: 20x - 7y - 8x + 4y.",
+                answer: "12x - 3y"
+            },
+            {
+                question: "Simplify: -3x + 7x.",
+                answer: "4x"
+            },
+            {
+                question: "Simplify: -5y + 9y.",
+                answer: "4y"
+            },
+            {
+                question: "Simplify: 8a - 12a.",
+                answer: "-4a"
+            },
+            {
+                question: "Simplify: -6m - 4m.",
+                answer: "-10m"
+            },
+            {
+                question: "Simplify: -9p + 5p.",
+                answer: "-4p"
+            },
+            {
+                question: "Simplify: -7x + 3x - 2x.",
+                answer: "-6x"
+            },
+            {
+                question: "Simplify: 12y - 15y + 4y.",
+                answer: "y"
+            },
+            {
+                question: "Simplify: -8a + 5a + 6a.",
+                answer: "3a"
+            },
+            {
+                question: "Simplify: 10m - 14m + 3m.",
+                answer: "-m"
+            },
+            {
+                question: "Simplify: -4p - 6p + 15p.",
+                answer: "5p"
+            },
+            {
+                question: "Simplify: -3x + 5y + 8x - 2y.",
+                answer: "5x + 3y"
+            },
+            {
+                question: "Simplify: 7a - 4b - 10a + 6b.",
+                answer: "-3a + 2b"
+            },
+            {
+                question: "Simplify: -5m + 3n + 8m - n.",
+                answer: "3m + 2n"
+            },
+            {
+                question: "Simplify: 12p - 7q - 15p + 2q.",
+                answer: "-3p - 5q"
+            },
+            {
+                question: "Simplify: -9x + 4y + 3x - 8y.",
+                answer: "-6x - 4y"
+            },
+            {
+                question: "Are 3x² and 7x² like terms? Answer yes or no.",
+                answer: "yes"
+            },
+            {
+                question: "Are 4x² and 4x like terms? Answer yes or no.",
+                answer: "no"
+            },
+            {
+                question: "Are 5a² and 9a² like terms? Answer yes or no.",
+                answer: "yes"
+            },
+            {
+                question: "Are 6x² and 3y² like terms? Answer yes or no.",
+                answer: "no"
+            },
+            {
+                question: "Simplify: 3x² + 5x².",
+                answer: "8x²"
+            },
+            {
+                question: "Simplify: 7y² - 2y².",
+                answer: "5y²"
+            },
+            {
+                question: "Simplify: 4a² + 6a² - 3a².",
+                answer: "7a²"
+            },
+            {
+                question: "Simplify: 10x² - 4x² + 2x².",
+                answer: "8x²"
+            },
+            {
+                question: "Simplify: 8m² + 3m² - 5m².",
+                answer: "6m²"
+            },
+            {
+                question: "Simplify: 12p² - 7p² - 2p².",
+                answer: "3p²"
+            },
+            {
+                question: "Simplify: 3x² + 4x + 5x².",
+                answer: "8x² + 4x"
+            },
+            {
+                question: "Simplify: 6y² + 3y - 2y².",
+                answer: "4y² + 3y"
+            },
+            {
+                question: "Simplify: 8a² - 4a + 3a² + 2a.",
+                answer: "11a² - 2a"
+            },
+            {
+                question: "Simplify: 10m² + 5m - 4m² - 2m.",
+                answer: "6m² + 3m"
+            },
+            {
+                question: "Simplify: 7x² - 3x + 5x² + 8x.",
+                answer: "12x² + 5x"
+            },
+            {
+                question: "Simplify: 4a² + 3a + 6a² - 5a.",
+                answer: "10a² - 2a"
+            },
+            {
+                question: "Simplify: 9y² - 4y + 2y² + 7y.",
+                answer: "11y² + 3y"
+            },
+            {
+                question: "Simplify: 12x² + 5x - 7x² - 9x.",
+                answer: "5x² - 4x"
+            },
+            {
+                question: "Simplify: 15a² - 8a + 3a² + 2a.",
+                answer: "18a² - 6a"
+            },
+            {
+                question: "Simplify: 5x + 3y + 2x - 4y + 7x.",
+                answer: "14x - y"
+            },
+            {
+                question: "Simplify: 8a - 3b + 5a + 7b - 2a.",
+                answer: "11a + 4b"
+            },
+            {
+                question: "Simplify: 6x² + 4x - 2x² + 3x - 5.",
+                answer: "4x² + 7x - 5"
+            },
+            {
+                question: "Simplify: 9a² - 3a + 4a² + 7a - 2.",
+                answer: "13a² + 4a - 2"
+            },
+            {
+                question: "Simplify: 12x² + 5x - 4x² - 9x + 6.",
+                answer: "8x² - 4x + 6"
+            },
+            {
+                question: "Simplify: 7y² - 3y + 5y² + 8y - 4.",
+                answer: "12y² + 5y - 4"
+            },
+            {
+                question: "Simplify: 10a² + 4a - 6a² - 9a + 7.",
+                answer: "4a² - 5a + 7"
+            },
+            {
+                question: "Simplify: 15x² - 7x + 3x² + 2x - 5.",
+                answer: "18x² - 5x - 5"
+            },
+            {
+                question: "Simplify: 8m² + 6m - 3m² - 10m + 4.",
+                answer: "5m² - 4m + 4"
+            },
+            {
+                question: "Simplify: 12p² - 5p + 7p² + 3p - 9.",
+                answer: "19p² - 2p - 9"
+            },
+
+            {
+                question: "Are 4x and 7x like terms? Type yes or no.",
+                answer: "yes"
+            },
+            {
+                question: "Are 3a and 5b like terms? Type yes or no.",
+                answer: "no"
+            },
+            {
+                question: "Simplify: 6x + 4x. What is the coefficient of x?",
+                answer: 10
+            },
 
         ]
     },
@@ -251,6 +1394,460 @@ const algebraLessons = [
             {
                 question: "Simplify 7b + 2b. What is the coefficient of b?",
                 answer: 9
+            },
+            {
+                question: "Simplify 4x + 3x. What is the coefficient of x?",
+                answer: 7
+            },
+            {
+                question: "Simplify 2x + 5x. What is the coefficient of x?",
+                answer: 7
+            },
+            {
+                question: "Simplify 6x + 2x. What is the coefficient of x?",
+                answer: 8
+            },
+            {
+                question: "Simplify 3y + 4y. What is the coefficient of y?",
+                answer: 7
+            },
+            {
+                question: "Simplify 5a + 3a. What is the coefficient of a?",
+                answer: 8
+            },
+            {
+                question: "Simplify 7m + 2m. What is the coefficient of m?",
+                answer: 9
+            },
+            {
+                question: "Simplify 9x + x. What is the coefficient of x?",
+                answer: 10
+            },
+            {
+                question: "Simplify 4y + 6y. What is the coefficient of y?",
+                answer: 10
+            },
+            {
+                question: "Simplify 8a + 5a. What is the coefficient of a?",
+                answer: 13
+            },
+            {
+                question: "Simplify 3m + 7m. What is the coefficient of m?",
+                answer: 10
+            },
+
+            {
+                question: "Simplify 4x + 3x + 2. What is the simplified expression?",
+                answer: "7x + 2"
+            },
+            {
+                question: "Simplify 5x + 2x + 4. What is the simplified expression?",
+                answer: "7x + 4"
+            },
+            {
+                question: "Simplify 6y + 3y + 5. What is the simplified expression?",
+                answer: "9y + 5"
+            },
+            {
+                question: "Simplify 2a + 7a + 3. What is the simplified expression?",
+                answer: "9a + 3"
+            },
+            {
+                question: "Simplify 8m + 4m + 1. What is the simplified expression?",
+                answer: "12m + 1"
+            },
+            {
+                question: "Simplify 3x + 5 + 4x. What is the simplified expression?",
+                answer: "7x + 5"
+            },
+            {
+                question: "Simplify 7y + 2 + 3y. What is the simplified expression?",
+                answer: "10y + 2"
+            },
+            {
+                question: "Simplify 5a + 6 + 2a. What is the simplified expression?",
+                answer: "7a + 6"
+            },
+            {
+                question: "Simplify 9m + 3 + m. What is the simplified expression?",
+                answer: "10m + 3"
+            },
+            {
+                question: "Simplify 4p + 7 + 5p. What is the simplified expression?",
+                answer: "9p + 7"
+            },
+
+            {
+                question: "Simplify 8x - 3x. What is the coefficient of x?",
+                answer: 5
+            },
+            {
+                question: "Simplify 10x - 4x. What is the coefficient of x?",
+                answer: 6
+            },
+            {
+                question: "Simplify 9y - 2y. What is the coefficient of y?",
+                answer: 7
+            },
+            {
+                question: "Simplify 12a - 5a. What is the coefficient of a?",
+                answer: 7
+            },
+            {
+                question: "Simplify 15m - 6m. What is the coefficient of m?",
+                answer: 9
+            },
+            {
+                question: "Simplify 11x - 3x + 2. What is the simplified expression?",
+                answer: "8x + 2"
+            },
+            {
+                question: "Simplify 14y - 5y + 3. What is the simplified expression?",
+                answer: "9y + 3"
+            },
+            {
+                question: "Simplify 13a - 4a + 6. What is the simplified expression?",
+                answer: "9a + 6"
+            },
+            {
+                question: "Simplify 16m - 7m + 2. What is the simplified expression?",
+                answer: "9m + 2"
+            },
+            {
+                question: "Simplify 20p - 8p + 5. What is the simplified expression?",
+                answer: "12p + 5"
+            },
+
+            {
+                question: "Simplify 3x + 4x - 2. What is the simplified expression?",
+                answer: "7x - 2"
+            },
+            {
+                question: "Simplify 8x - 3x - 5. What is the simplified expression?",
+                answer: "5x - 5"
+            },
+            {
+                question: "Simplify 6y + 5y - 4. What is the simplified expression?",
+                answer: "11y - 4"
+            },
+            {
+                question: "Simplify 10a - 3a - 7. What is the simplified expression?",
+                answer: "7a - 7"
+            },
+            {
+                question: "Simplify 12m + 4m - 9. What is the simplified expression?",
+                answer: "16m - 9"
+            },
+            {
+                question: "Simplify 15p - 6p - 2. What is the simplified expression?",
+                answer: "9p - 2"
+            },
+            {
+                question: "Simplify 7x + 9 - 2x. What is the simplified expression?",
+                answer: "5x + 9"
+            },
+            {
+                question: "Simplify 11y - 4 + 3y. What is the simplified expression?",
+                answer: "14y - 4"
+            },
+            {
+                question: "Simplify 9a + 6 - 5a. What is the simplified expression?",
+                answer: "4a + 6"
+            },
+            {
+                question: "Simplify 18m - 3 + 2m. What is the simplified expression?",
+                answer: "20m - 3"
+            },
+
+            {
+                question: "Simplify 3x + 2y + 4x. What is the simplified expression?",
+                answer: "7x + 2y"
+            },
+            {
+                question: "Simplify 5x + 3y + 2x. What is the simplified expression?",
+                answer: "7x + 3y"
+            },
+            {
+                question: "Simplify 4a + 6b + 3a. What is the simplified expression?",
+                answer: "7a + 6b"
+            },
+            {
+                question: "Simplify 8m + 2n + 5m. What is the simplified expression?",
+                answer: "13m + 2n"
+            },
+            {
+                question: "Simplify 6p + 4q + 3p. What is the simplified expression?",
+                answer: "9p + 4q"
+            },
+            {
+                question: "Simplify 7x + 5y - 2x. What is the simplified expression?",
+                answer: "5x + 5y"
+            },
+            {
+                question: "Simplify 10a - 3b + 4a. What is the simplified expression?",
+                answer: "14a - 3b"
+            },
+            {
+                question: "Simplify 12m + 5n - 7m. What is the simplified expression?",
+                answer: "5m + 5n"
+            },
+            {
+                question: "Simplify 9p - 4q + 6p. What is the simplified expression?",
+                answer: "15p - 4q"
+            },
+            {
+                question: "Simplify 15x - 6y - 5x. What is the simplified expression?",
+                answer: "10x - 6y"
+            },
+
+            {
+                question: "Simplify 4x + 3y + 5x + 2y. What is the simplified expression?",
+                answer: "9x + 5y"
+            },
+            {
+                question: "Simplify 6a + 2b + 3a + 5b. What is the simplified expression?",
+                answer: "9a + 7b"
+            },
+            {
+                question: "Simplify 7m + 4n + 2m + 3n. What is the simplified expression?",
+                answer: "9m + 7n"
+            },
+            {
+                question: "Simplify 5p + 6q + 4p - 2q. What is the simplified expression?",
+                answer: "9p + 4q"
+            },
+            {
+                question: "Simplify 8x - 3y + 2x + 5y. What is the simplified expression?",
+                answer: "10x + 2y"
+            },
+            {
+                question: "Simplify 10a + 4b - 3a + 2b. What is the simplified expression?",
+                answer: "7a + 6b"
+            },
+            {
+                question: "Simplify 12m - 5n - 4m + 2n. What is the simplified expression?",
+                answer: "8m - 3n"
+            },
+            {
+                question: "Simplify 15p + 3q - 7p - q. What is the simplified expression?",
+                answer: "8p + 2q"
+            },
+            {
+                question: "Simplify 9x - 4y + 6x - 3y. What is the simplified expression?",
+                answer: "15x - 7y"
+            },
+            {
+                question: "Simplify 14a + 5b - 6a - 2b. What is the simplified expression?",
+                answer: "8a + 3b"
+            },
+
+            {
+                question: "Simplify 3x + 4 + 5x - 2. What is the simplified expression?",
+                answer: "8x + 2"
+            },
+            {
+                question: "Simplify 7y - 3 + 2y + 8. What is the simplified expression?",
+                answer: "9y + 5"
+            },
+            {
+                question: "Simplify 5a + 6 - 2a + 4. What is the simplified expression?",
+                answer: "3a + 10"
+            },
+            {
+                question: "Simplify 9m - 7 + 4m + 2. What is the simplified expression?",
+                answer: "13m - 5"
+            },
+            {
+                question: "Simplify 12p + 5 - 7p - 3. What is the simplified expression?",
+                answer: "5p + 2"
+            },
+            {
+                question: "Simplify 8x + 3y + 4 - 2x + 5y - 1. What is the simplified expression?",
+                answer: "6x + 8y + 3"
+            },
+            {
+                question: "Simplify 10a - 2b + 7 - 3a + 5b + 2. What is the simplified expression?",
+                answer: "7a + 3b + 9"
+            },
+            {
+                question: "Simplify 6m + 4n - 5 + 3m - 2n + 8. What is the simplified expression?",
+                answer: "9m + 2n + 3"
+            },
+            {
+                question: "Simplify 15p - 4q + 6 - 8p + 2q - 3. What is the simplified expression?",
+                answer: "7p - 2q + 3"
+            },
+            {
+                question: "Simplify 11x + 5y - 7 + 4x - 2y + 3. What is the simplified expression?",
+                answer: "15x + 3y - 4"
+            },
+
+            {
+                question: "Simplify 3x + 2x + 4y + y. What is the simplified expression?",
+                answer: "5x + 5y"
+            },
+            {
+                question: "Simplify 6a + 3a + 2b + 5b. What is the simplified expression?",
+                answer: "9a + 7b"
+            },
+            {
+                question: "Simplify 10m - 4m + 3n - n. What is the simplified expression?",
+                answer: "6m + 2n"
+            },
+            {
+                question: "Simplify 12p - 5p + 4q - 2q. What is the simplified expression?",
+                answer: "7p + 2q"
+            },
+            {
+                question: "Simplify 15x - 6x + 3y - 5y. What is the simplified expression?",
+                answer: "9x - 2y"
+            },
+
+            {
+                question: "Simplify 4x + 3y + 2x - y + 5. What is the simplified expression?",
+                answer: "6x + 2y + 5"
+            },
+            {
+                question: "Simplify 7a - 2b + 3a + 5b - 4. What is the simplified expression?",
+                answer: "10a + 3b - 4"
+            },
+            {
+                question: "Simplify 9m + 4n - 3m - 2n + 7. What is the simplified expression?",
+                answer: "6m + 2n + 7"
+            },
+            {
+                question: "Simplify 12p - 5q + 4p + 2q - 6. What is the simplified expression?",
+                answer: "16p - 3q - 6"
+            },
+            {
+                question: "Simplify 15x + 6y - 8x - 3y + 4. What is the simplified expression?",
+                answer: "7x + 3y + 4"
+            },
+
+            {
+                question: "Simplify 3x² + 5x². What is the coefficient of x²?",
+                answer: 8
+            },
+            {
+                question: "Simplify 7x² - 2x². What is the coefficient of x²?",
+                answer: 5
+            },
+            {
+                question: "Simplify 4x² + 3x + 2x². What is the simplified expression?",
+                answer: "6x² + 3x"
+            },
+            {
+                question: "Simplify 5x² + 4x + 2x² + 3x. What is the simplified expression?",
+                answer: "7x² + 7x"
+            },
+            {
+                question: "Simplify 8x² - 3x² + 4x. What is the simplified expression?",
+                answer: "5x² + 4x"
+            },
+
+            {
+                question: "Simplify 3x² + 4x + 5x² - 2x + 6. What is the simplified expression?",
+                answer: "8x² + 2x + 6"
+            },
+            {
+                question: "Simplify 7x² - 3x + 2x² + 5x - 4. What is the simplified expression?",
+                answer: "9x² + 2x - 4"
+            },
+            {
+                question: "Simplify 10x² + 6x - 4x² - 2x + 3. What is the simplified expression?",
+                answer: "6x² + 4x + 3"
+            },
+            {
+                question: "Simplify 12x² - 5x + 3x² + 2x - 7. What is the simplified expression?",
+                answer: "15x² - 3x - 7"
+            },
+            {
+                question: "Simplify 15x² + 4x - 6x² - 7x + 5. What is the simplified expression?",
+                answer: "9x² - 3x + 5"
+            },
+
+            {
+                question: "Simplify 4x² + 3x + 2y + 5x² - x + 4y. What is the simplified expression?",
+                answer: "9x² + 2x + 6y"
+            },
+            {
+                question: "Simplify 6a² + 4a + 3b + 2a² + 5a + b. What is the simplified expression?",
+                answer: "8a² + 9a + 4b"
+            },
+            {
+                question: "Simplify 8m² - 3m + 2n + 4m² + 5m - n. What is the simplified expression?",
+                answer: "12m² + 2m + n"
+            },
+            {
+                question: "Simplify 10p² + 6p - 4q + 3p² - 2p + 2q. What is the simplified expression?",
+                answer: "13p² + 4p - 2q"
+            },
+            {
+                question: "Simplify 12x² - 5x + 3y + 4x² + 2x - y. What is the simplified expression?",
+                answer: "16x² - 3x + 2y"
+            },
+
+            {
+                question: "Simplify 3x² + 4x + 2 + 5x² - x + 7. What is the simplified expression?",
+                answer: "8x² + 3x + 9"
+            },
+            {
+                question: "Simplify 7x² - 3x + 5 + 2x² + 6x - 8. What is the simplified expression?",
+                answer: "9x² + 3x - 3"
+            },
+            {
+                question: "Simplify 10x² + 5x - 4 + 3x² - 2x + 9. What is the simplified expression?",
+                answer: "13x² + 3x + 5"
+            },
+            {
+                question: "Simplify 14x² - 7x + 6 - 5x² + 3x - 2. What is the simplified expression?",
+                answer: "9x² - 4x + 4"
+            },
+            {
+                question: "Simplify 18x² + 4x - 9 - 7x² - 6x + 5. What is the simplified expression?",
+                answer: "11x² - 2x - 4"
+            },
+
+            {
+                question: "Simplify 4x² + 3x + 2y + 5x² - x + 4y - 6. What is the simplified expression?",
+                answer: "9x² + 2x + 6y - 6"
+            },
+            {
+                question: "Simplify 7a² - 2a + 3b + 4a² + 5a - b + 8. What is the simplified expression?",
+                answer: "11a² + 3a + 2b + 8"
+            },
+            {
+                question: "Simplify 9m² + 4m - 2n + 3m² - 7m + 5n - 4. What is the simplified expression?",
+                answer: "12m² - 3m + 3n - 4"
+            },
+            {
+                question: "Simplify 12p² - 5p + 4q + 6p² + 2p - 7q + 3. What is the simplified expression?",
+                answer: "18p² - 3p - 3q + 3"
+            },
+            {
+                question: "Simplify 15x² + 6x - 3y + 4 - 8x² - 2x + 5y - 9. What is the simplified expression?",
+                answer: "7x² + 4x + 2y - 5"
+            },
+
+            {
+                question: "Simplify 3x + 2(4x). What is the coefficient of x?",
+                answer: 11
+            },
+            {
+                question: "Simplify 5x + 3(2x). What is the coefficient of x?",
+                answer: 11
+            },
+            {
+                question: "Simplify 4(x + 2) + 3x. What is the simplified expression?",
+                answer: "7x + 8"
+            },
+            {
+                question: "Simplify 3(x + 4) + 2x. What is the simplified expression?",
+                answer: "5x + 12"
+            },
+            {
+                question: "Simplify 2(3x + 4) + x. What is the simplified expression?",
+                answer: "7x + 8"
             }
         ]
     },
