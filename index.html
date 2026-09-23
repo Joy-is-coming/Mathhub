@@ -165,15 +165,15 @@
 
       <div class="progress">
         <div class="progress-info">
-          <span>Algebra</span>
-          <span>80%</span>
+          <span id="homeContinueSubject">Your Learning</span>
+          <span id="homeContinuePercentage">0%</span>
         </div>
 
         <div class="progress-bar">
-          <div class="progress-fill"></div>
+          <div class="progress-fill" id="homeContinueFill"></div>
         </div>
 
-        <button class="continue-btn" type="button">
+        <button class="continue-btn" id="homeContinueBtn" type="button">
           Continue Lesson →
         </button>
       </div>
@@ -425,28 +425,42 @@
   </section>
 
 
-  <!-- Progress -->
+  <!-- Progress Dashboard -->
   <section class="progress-page" id="progress">
 
     <div class="section-heading">
       <div>
         <p class="small-title">YOUR JOURNEY</p>
-        <h2>Your Learning Progress</h2>
-        <p>
-          Track the lessons you have completed and keep improving
-          your Mathematics skills.
-        </p>
+        <h2>Your Learning Dashboard</h2>
+        <p>See your lesson completion, subject progress and recent quiz performance in one place.</p>
+      </div>
+    </div>
+
+    <div class="dashboard-stats">
+      <div class="dashboard-stat-card">
+        <span class="dashboard-stat-icon">📚</span>
+        <div><strong id="dashboardCompletedLessons">0</strong><span>Lessons Completed</span></div>
+      </div>
+      <div class="dashboard-stat-card">
+        <span class="dashboard-stat-icon">📊</span>
+        <div><strong id="dashboardOverallPercentage">0%</strong><span>Overall Progress</span></div>
+      </div>
+      <div class="dashboard-stat-card">
+        <span class="dashboard-stat-icon">🏆</span>
+        <div><strong id="dashboardQuizCount">0</strong><span>Quizzes Completed</span></div>
+      </div>
+      <div class="dashboard-stat-card">
+        <span class="dashboard-stat-icon">🎯</span>
+        <div><strong id="dashboardQuizAverage">0%</strong><span>Quiz Average</span></div>
       </div>
     </div>
 
     <div class="progress-summary">
-
       <div class="progress-header">
         <div>
-          <h3>Learning Progress</h3>
-          <p id="progressText">0 of 300 lessons completed</p>
+          <h3>Overall Learning Progress</h3>
+          <p id="progressText">0 of 400 lessons completed</p>
         </div>
-
         <strong id="overallPercentage">0%</strong>
       </div>
 
@@ -454,8 +468,36 @@
         <div class="overall-progress-fill" id="overallProgressFill"></div>
       </div>
 
-      <div class="lesson-progress-list" id="lessonProgressList"></div>
+      <div class="subject-progress-grid" id="lessonProgressList"></div>
+    </div>
 
+    <div class="dashboard-card">
+      <div class="dashboard-card-header">
+        <div>
+          <p class="small-title">QUIZ HISTORY</p>
+          <h3>Recent Quiz Scores</h3>
+        </div>
+        <span class="dashboard-card-note">Latest attempts</span>
+      </div>
+      <div id="quizHistoryList" class="quiz-history-list">
+        <p class="dashboard-empty">No quiz attempts yet. Complete a quiz to see your scores here.</p>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="dashboard-card-header">
+        <div>
+          <p class="small-title">NEXT STEP</p>
+          <h3>Continue Learning</h3>
+        </div>
+      </div>
+      <div class="dashboard-continue" id="dashboardContinue">
+        <div>
+          <strong id="continueLessonTitle">Start your first lesson</strong>
+          <p id="continueLessonDescription">Choose a subject and begin learning.</p>
+        </div>
+        <button class="continue-btn" id="dashboardContinueBtn" type="button">Start Lesson →</button>
+      </div>
     </div>
   </section>
 

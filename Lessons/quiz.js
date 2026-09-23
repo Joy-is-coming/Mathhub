@@ -148,6 +148,14 @@ function finishQuiz() {
 
   quizFinalScore.textContent = `${score} / ${QUIZ_TOTAL}`;
   quizFinalSummary.textContent = `You answered ${score} out of ${QUIZ_TOTAL} questions correctly (${percentage}%).`;
+
+  if (typeof saveQuizScore === "function") {
+    saveQuizScore(quizSubject, score, QUIZ_TOTAL);
+  }
+
+  if (typeof updateProgress === "function") {
+    updateProgress();
+  }
   quizCorrectCount.textContent = score;
   quizWrongCount.textContent = wrong;
   quizPercentage.textContent = `${percentage}%`;
