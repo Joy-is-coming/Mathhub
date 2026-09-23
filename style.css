@@ -1392,3 +1392,56 @@ footer {
     width: 100%;
   }
 }
+
+
+/* ===============================
+   VISUAL FORMULA CARD
+   =============================== */
+
+.formula-card {
+  margin: 28px 0;
+  padding: 24px;
+  border-radius: 14px;
+  background: #eef5ff;
+  border-left: 5px solid #2563eb;
+  box-shadow: 0 5px 18px rgba(37, 99, 235, 0.08);
+}
+
+.formula-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.formula-expression {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: white;
+  font-family: "Cambria Math", "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.formula-card p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .formula-card {
+    padding: 18px;
+  }
+
+  .formula-expression {
+    font-size: 20px;
+    padding: 12px;
+  }
+}
