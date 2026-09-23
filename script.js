@@ -765,7 +765,7 @@ const playlist = [
 let currentSong = 0;
 let musicStarted = false;
 
-backgroundMusic.volume = 0.15;
+backgroundMusic.volume = 0.5;
 
 
 // Play a song
