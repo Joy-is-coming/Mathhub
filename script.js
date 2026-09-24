@@ -1,3 +1,51 @@
+
+// ===============================
+// AUTHENTICATION
+// ===============================
+
+function getLoggedInUser() {
+  const savedUser = localStorage.getItem("mathHubUser");
+  const sessionUser = sessionStorage.getItem("mathHubSession");
+
+  if (savedUser) {
+    return JSON.parse(savedUser);
+  }
+
+  if (sessionUser) {
+    return JSON.parse(sessionUser);
+  }
+
+  return null;
+}
+
+function requireLogin() {
+  const user = getLoggedInUser();
+
+  if (!user) {
+    window.location.href = "login.html";
+    return null;
+  }
+
+  return user;
+}
+
+const currentUser = requireLogin();
+
+const userName = document.getElementById("userName");
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (currentUser) {
+  userName.textContent = currentUser.name
+    ? `Hi, ${currentUser.name.split(" ")[0]} 👋`
+    : currentUser.email;
+}
+
+logoutBtn.addEventListener("click", function () {
+  localStorage.removeItem("mathHubUser");
+  sessionStorage.removeItem("mathHubSession");
+  window.location.href = "login.html";
+});
+
 // ===============================
 // MOBILE MENU
 // ===============================
