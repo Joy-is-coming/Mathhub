@@ -182,19 +182,36 @@ let questionAnswered = false;
 
 
 // ===============================
-// PROGRESS STORAGE
+// USER-SPECIFIC PROGRESS STORAGE
 // ===============================
+
+function getUserStorageKey(key) {
+  if (!currentUser || !currentUser.email) {
+    return key;
+  }
+
+  const safeEmail = currentUser.email
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "_");
+
+  return `mathHub_${safeEmail}_${key}`;
+}
 
 let completedLessons = [];
 
-const savedProgress =
-  localStorage.getItem("mathHubProgress");
+const progressKey = getUserStorageKey("progress");
+const savedProgress = localStorage.getItem(progressKey);
 
 if (savedProgress) {
+  try {
+    completedLessons = JSON.parse(savedProgress);
 
-  completedLessons =
-    JSON.parse(savedProgress);
-
+    if (!Array.isArray(completedLessons)) {
+      completedLessons = [];
+    }
+  } catch (error) {
+    completedLessons = [];
+  }
 }
 
 
@@ -203,12 +220,10 @@ if (savedProgress) {
 // ===============================
 
 function saveProgress() {
-
   localStorage.setItem(
-    "mathHubProgress",
+    progressKey,
     JSON.stringify(completedLessons)
   );
-
 }
 
 
@@ -1255,7 +1270,9 @@ backToSubject.addEventListener(
 // ===============================
 
 function getQuizScores() {
-  const savedScores = localStorage.getItem("mathHubQuizScores");
+  const savedScores = localStorage.getItem(
+    getUserStorageKey("quizScores")
+  );
 
   if (!savedScores) return [];
 
@@ -1279,7 +1296,7 @@ function saveQuizScore(subject, score, total) {
   });
 
   localStorage.setItem(
-    "mathHubQuizScores",
+    getUserStorageKey("quizScores"),
     JSON.stringify(scores.slice(0, 10))
   );
 }
