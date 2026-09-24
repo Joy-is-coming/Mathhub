@@ -18,10 +18,25 @@ togglePassword.addEventListener("click", function () {
   );
 });
 
-loginForm.addEventListener("submit", function (event) {
+function getAccounts() {
+  return JSON.parse(localStorage.getItem("mathHubAccounts") || "[]");
+}
+
+async function hashPassword(password) {
+  const data = new TextEncoder().encode(password);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+
+  return Array.from(new Uint8Array(hashBuffer))
+    .map(function (byte) {
+      return byte.toString(16).padStart(2, "0");
+    })
+    .join("");
+}
+
+loginForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  const email = loginEmail.value.trim();
+  const email = loginEmail.value.trim().toLowerCase();
   const password = loginPassword.value;
 
   loginMessage.className = "login-message";
@@ -32,26 +47,40 @@ loginForm.addEventListener("submit", function (event) {
     return;
   }
 
-  /*
-    FRONT-END DEMO AUTHENTICATION
+  const accounts = getAccounts();
+  const account = accounts.find(function (item) {
+    return item.email === email;
+  });
 
-    This currently validates that the fields are filled and stores
-    the login state locally. It is NOT secure authentication.
+  if (!account) {
+    loginMessage.textContent = "No account was found with this email.";
+    loginMessage.classList.add("error");
+    return;
+  }
 
-    A real MathHub account system will later connect this form
-    to a backend/database and verify the password securely.
-  */
+  const passwordHash = await hashPassword(password);
+
+  if (passwordHash !== account.passwordHash) {
+    loginMessage.textContent = "Incorrect email or password.";
+    loginMessage.classList.add("error");
+    return;
+  }
 
   const user = {
-    email: email,
+    name: account.name,
+    email: account.email,
     loggedInAt: new Date().toISOString()
   };
 
-  const storageKey = rememberMe.checked
-    ? "mathHubUser"
-    : "mathHubSession";
+  localStorage.removeItem("mathHubSession");
+  localStorage.removeItem("mathHubUser");
+  sessionStorage.removeItem("mathHubSession");
 
-  localStorage.setItem(storageKey, JSON.stringify(user));
+  if (rememberMe.checked) {
+    localStorage.setItem("mathHubUser", JSON.stringify(user));
+  } else {
+    sessionStorage.setItem("mathHubSession", JSON.stringify(user));
+  }
 
   loginMessage.textContent = "Login successful! Redirecting...";
   loginMessage.classList.add("success");
@@ -71,8 +100,5 @@ forgotPassword.addEventListener("click", function (event) {
 });
 
 createAccountBtn.addEventListener("click", function () {
-  loginMessage.className = "login-message";
-  loginMessage.textContent =
-    "The registration page is our next account feature.";
-  loginMessage.classList.add("info");
+  window.location.href = "register.html";
 });
