@@ -9,13 +9,9 @@ const createAccountBtn = document.getElementById("createAccountBtn");
 
 togglePassword.addEventListener("click", function () {
   const isPassword = loginPassword.type === "password";
-
   loginPassword.type = isPassword ? "text" : "password";
   togglePassword.textContent = isPassword ? "🙈" : "👁";
-  togglePassword.setAttribute(
-    "aria-label",
-    isPassword ? "Hide password" : "Show password"
-  );
+  togglePassword.setAttribute("aria-label", isPassword ? "Hide password" : "Show password");
 });
 
 function getAccounts() {
@@ -25,11 +21,8 @@ function getAccounts() {
 async function hashPassword(password) {
   const data = new TextEncoder().encode(password);
   const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-
   return Array.from(new Uint8Array(hashBuffer))
-    .map(function (byte) {
-      return byte.toString(16).padStart(2, "0");
-    })
+    .map(function (byte) { return byte.toString(16).padStart(2, "0"); })
     .join("");
 }
 
@@ -47,6 +40,38 @@ loginForm.addEventListener("submit", async function (event) {
     return;
   }
 
+  loginMessage.textContent = "Signing in...";
+
+  // REAL SUPABASE AUTHENTICATION
+  if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase) {
+    const { data, error } = await window.mathHubSupabase.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      loginMessage.textContent = error.message;
+      loginMessage.classList.add("error");
+      return;
+    }
+
+    const user = data.user;
+    localStorage.setItem("mathHubUser", JSON.stringify({
+      id: user.id,
+      name: user.user_metadata?.full_name || email.split("@")[0],
+      email: user.email
+    }));
+
+    loginMessage.textContent = "Login successful! Redirecting...";
+    loginMessage.classList.add("success");
+
+    setTimeout(function () {
+      window.location.href = "index.html";
+    }, 500);
+    return;
+  }
+
+  // Temporary local demo fallback until Supabase is configured.
   const accounts = getAccounts();
   const account = accounts.find(function (item) {
     return item.email === email;
@@ -90,12 +115,31 @@ loginForm.addEventListener("submit", async function (event) {
   }, 700);
 });
 
-forgotPassword.addEventListener("click", function (event) {
+forgotPassword.addEventListener("click", async function (event) {
   event.preventDefault();
-
   loginMessage.className = "login-message";
-  loginMessage.textContent =
-    "Password recovery will be connected when the account backend is added.";
+
+  if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase) {
+    const email = loginEmail.value.trim().toLowerCase();
+
+    if (!email) {
+      loginMessage.textContent = "Enter your email address first.";
+      loginMessage.classList.add("error");
+      return;
+    }
+
+    const { error } = await window.mathHubSupabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + window.location.pathname.replace(/login\.html$/, "login.html")
+    });
+
+    loginMessage.textContent = error
+      ? error.message
+      : "If an account exists for that email, password recovery instructions have been sent.";
+    loginMessage.classList.add(error ? "error" : "info");
+    return;
+  }
+
+  loginMessage.textContent = "Password recovery will be available when Supabase is configured.";
   loginMessage.classList.add("info");
 });
 
