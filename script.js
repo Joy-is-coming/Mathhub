@@ -7,18 +7,18 @@ function getLoggedInUser() {
   const savedUser = localStorage.getItem("mathHubUser");
   const sessionUser = sessionStorage.getItem("mathHubSession");
 
-  if (savedUser) {
-    return JSON.parse(savedUser);
-  }
-
-  if (sessionUser) {
-    return JSON.parse(sessionUser);
-  }
+  if (savedUser) return JSON.parse(savedUser);
+  if (sessionUser) return JSON.parse(sessionUser);
 
   return null;
 }
 
 function requireLogin() {
+  // When Supabase is configured, the real auth session is checked asynchronously below.
+  if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase) {
+    return getLoggedInUser();
+  }
+
   const user = getLoggedInUser();
 
   if (!user) {
@@ -29,22 +29,69 @@ function requireLogin() {
   return user;
 }
 
-const currentUser = requireLogin();
+let currentUser = requireLogin();
 
 const userName = document.getElementById("userName");
 const logoutBtn = document.getElementById("logoutBtn");
 
-if (currentUser) {
-  userName.textContent = currentUser.name
-    ? `Hi, ${currentUser.name.split(" ")[0]} 👋`
-    : currentUser.email;
+function displayCurrentUser(user) {
+  if (!user) return;
+
+  localStorage.setItem("mathHubUser", JSON.stringify({
+    id: user.id,
+    name: user.user_metadata?.full_name || user.name || user.email?.split("@")[0] || "Student",
+    email: user.email
+  }));
+
+  userName.textContent = user.user_metadata?.full_name
+    ? `Hi, ${user.user_metadata.full_name.split(" ")[0]} 👋`
+    : user.name
+      ? `Hi, ${user.name.split(" ")[0]} 👋`
+      : `Hi, ${user.email?.split("@")[0] || "Student"} 👋`;
 }
 
-logoutBtn.addEventListener("click", function () {
+if (currentUser) {
+  displayCurrentUser(currentUser);
+}
+
+logoutBtn.addEventListener("click", async function () {
+  if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase) {
+    await window.mathHubSupabase.auth.signOut({ scope: "local" });
+  }
+
   localStorage.removeItem("mathHubUser");
   sessionStorage.removeItem("mathHubSession");
   window.location.href = "login.html";
 });
+
+// Verify the real Supabase user when configured.
+if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase) {
+  window.mathHubSupabase.auth.getUser().then(async function (result) {
+    const user = result.data?.user;
+
+    if (!user) {
+      localStorage.removeItem("mathHubUser");
+      sessionStorage.removeItem("mathHubSession");
+      window.location.href = "login.html";
+      return;
+    }
+
+    currentUser = user;
+    displayCurrentUser(user);
+
+    if (typeof loadCloudProgress === "function") {
+      await loadCloudProgress();
+    }
+
+    if (typeof loadCloudQuizScores === "function") {
+      await loadCloudQuizScores();
+    }
+
+    if (typeof updateProgress === "function") {
+      updateProgress();
+    }
+  });
+}
 
 // ===============================
 // MOBILE MENU
@@ -199,7 +246,7 @@ function getUserStorageKey(key) {
 
 let completedLessons = [];
 
-const progressKey = getUserStorageKey("progress");
+let progressKey = getUserStorageKey("progress");
 const savedProgress = localStorage.getItem(progressKey);
 
 if (savedProgress) {
@@ -224,7 +271,54 @@ function saveProgress() {
     progressKey,
     JSON.stringify(completedLessons)
   );
+
+  if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase && currentUser?.id) {
+    syncProgressToCloud();
+  }
 }
+
+async function syncProgressToCloud() {
+  if (!currentUser?.id || !window.mathHubSupabase) return;
+
+  const rows = completedLessons.map(function (lessonKey) {
+    return {
+      user_id: currentUser.id,
+      lesson_key: lessonKey
+    };
+  });
+
+  if (rows.length === 0) return;
+
+  const { error } = await window.mathHubSupabase
+    .from("lesson_progress")
+    .upsert(rows, { onConflict: "user_id,lesson_key" });
+
+  if (error) {
+    console.error("Could not sync lesson progress:", error.message);
+  }
+}
+
+async function loadCloudProgress() {
+  if (!currentUser?.id || !window.mathHubSupabase) return;
+
+  const { data, error } = await window.mathHubSupabase
+    .from("lesson_progress")
+    .select("lesson_key")
+    .eq("user_id", currentUser.id);
+
+  if (error) {
+    console.error("Could not load cloud progress:", error.message);
+    return;
+  }
+
+  completedLessons = (data || []).map(function (item) {
+    return item.lesson_key;
+  });
+
+  progressKey = getUserStorageKey("progress");
+  localStorage.setItem(progressKey, JSON.stringify(completedLessons));
+}
+
 
 
 // ===============================
@@ -1285,19 +1379,68 @@ function getQuizScores() {
 }
 
 function saveQuizScore(subject, score, total) {
-  const scores = getQuizScores();
-
-  scores.unshift({
+  const quizRecord = {
     subject,
     score,
     total,
     percentage: Math.round((score / total) * 100),
     date: new Date().toISOString()
-  });
+  };
+
+  const scores = getQuizScores();
+  scores.unshift(quizRecord);
 
   localStorage.setItem(
     getUserStorageKey("quizScores"),
     JSON.stringify(scores.slice(0, 10))
+  );
+
+  if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase && currentUser?.id) {
+    window.mathHubSupabase
+      .from("quiz_scores")
+      .insert({
+        user_id: currentUser.id,
+        subject,
+        score,
+        total,
+        percentage: quizRecord.percentage
+      })
+      .then(function (result) {
+        if (result.error) {
+          console.error("Could not save quiz score:", result.error.message);
+        }
+      });
+  }
+}
+
+async function loadCloudQuizScores() {
+  if (!currentUser?.id || !window.mathHubSupabase) return;
+
+  const { data, error } = await window.mathHubSupabase
+    .from("quiz_scores")
+    .select("subject,score,total,percentage,created_at")
+    .eq("user_id", currentUser.id)
+    .order("created_at", { ascending: false })
+    .limit(10);
+
+  if (error) {
+    console.error("Could not load cloud quiz scores:", error.message);
+    return;
+  }
+
+  const scores = (data || []).map(function (item) {
+    return {
+      subject: item.subject,
+      score: item.score,
+      total: item.total,
+      percentage: item.percentage,
+      date: item.created_at
+    };
+  });
+
+  localStorage.setItem(
+    getUserStorageKey("quizScores"),
+    JSON.stringify(scores)
   );
 }
 
