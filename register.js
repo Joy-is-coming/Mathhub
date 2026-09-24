@@ -28,11 +28,8 @@ function getAccounts() {
 async function hashPassword(password) {
   const data = new TextEncoder().encode(password);
   const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-
   return Array.from(new Uint8Array(hashBuffer))
-    .map(function (byte) {
-      return byte.toString(16).padStart(2, "0");
-    })
+    .map(function (byte) { return byte.toString(16).padStart(2, "0"); })
     .join("");
 }
 
@@ -52,6 +49,48 @@ registerForm.addEventListener("submit", async function (event) {
     return;
   }
 
+  if (password.length < 6) {
+    registerMessage.textContent = "Password must be at least 6 characters.";
+    registerMessage.classList.add("error");
+    return;
+  }
+
+  registerMessage.textContent = "Creating your account...";
+
+  // REAL SUPABASE AUTHENTICATION
+  if (window.MATHHUB_SUPABASE_CONFIGURED && window.mathHubSupabase) {
+    const { data, error } = await window.mathHubSupabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          full_name: name
+        },
+        emailRedirectTo: window.location.origin + window.location.pathname.replace(/register\.html$/, "index.html")
+      }
+    });
+
+    if (error) {
+      registerMessage.textContent = error.message;
+      registerMessage.classList.add("error");
+      return;
+    }
+
+    if (data.session) {
+      registerMessage.textContent = "Account created! Redirecting...";
+      registerMessage.classList.add("success");
+
+      setTimeout(function () {
+        window.location.href = "index.html";
+      }, 500);
+    } else {
+      registerMessage.textContent = "Account created. Check your email to confirm your account, then log in.";
+      registerMessage.classList.add("success");
+    }
+    return;
+  }
+
+  // Temporary local demo fallback until Supabase is configured.
   const accounts = getAccounts();
   const existingAccount = accounts.find(function (account) {
     return account.email === email;
